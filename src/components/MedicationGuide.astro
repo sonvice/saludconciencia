@@ -1,0 +1,160 @@
+---
+import { HeartPulse, AlertTriangle, Pill, ShieldAlert, CheckCircle, Clock } from 'lucide-astro';
+
+const medications = [
+  {
+    name: 'Imatinib',
+    brand: 'Glivec®',
+    generation: '1ª Generación',
+    badgeColor: 'bg-blue-100 text-blue-800 border-blue-200',
+    howToTake: 'Tomar siempre con una comida principal y un vaso grande de agua (240 ml) para evitar irritación gástrica.',
+    foodRequirement: 'Con alimentos',
+    keyEffects: 'Edema periorbitario (ojos), calambres musculares, náuseas leves, diarrea o fatiga.',
+    monitoring: 'Hemograma quincenal al inicio, pruebas de función hepática y renal, PCR cada 3 meses.',
+    warning: 'Nunca tomar con pomelo/toronja ni con hierba de San Juan.'
+  },
+  {
+    name: 'Dasatinib',
+    brand: 'Sprycel®',
+    generation: '2ª Generación',
+    badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+    howToTake: 'Una sola toma diaria por la mañana o por la noche, con o sin alimentos.',
+    foodRequirement: 'Con o sin alimentos',
+    keyEffects: 'Riesgo de derrame pleural (líquido en pulmones: tos seca o falta de aire), dolor de cabeza, citopenias.',
+    monitoring: 'Radiografía de tórax si hay dificultad respiratoria, hemograma periódico, PCR trimestral.',
+    warning: 'Evitar antiácidos 2 horas antes y después; pueden anular su absorción gástrica.'
+  },
+  {
+    name: 'Nilotinib',
+    brand: 'Tasigna®',
+    generation: '2ª Generación',
+    badgeColor: 'bg-purple-100 text-purple-800 border-purple-200',
+    howToTake: 'Dos tomas diarias (cada 12 horas) en riguroso AYUNO: 2 horas antes y 1 hora después sin comer.',
+    foodRequirement: 'En ayuno estricto',
+    keyEffects: 'Erupciones cutáneas, picor, elevación de bilirrubina/lipasa, riesgo cardiovascular a largo plazo.',
+    monitoring: 'Electrocardiograma (intervalo QTc), perfil lipídico, glucemia y función hepática.',
+    warning: 'Comer junto a la toma puede disparar la concentración del fármaco a niveles peligrosos.'
+  },
+  {
+    name: 'Bosutinib',
+    brand: 'Bosulif®',
+    generation: '2ª Generación',
+    badgeColor: 'bg-amber-100 text-amber-800 border-amber-200',
+    howToTake: 'Una toma diaria siempre junto con alimentos.',
+    foodRequirement: 'Con alimentos',
+    keyEffects: 'Diarrea temprana (suele controlarse en pocas semanas), náuseas, elevación de transaminasas.',
+    monitoring: 'Pruebas hepáticas mensuales los primeros 3 meses, hemograma y función renal.',
+    warning: 'Mantener excelente hidratación ante episodios diarreicos iniciales.'
+  },
+  {
+    name: 'Ponatinib',
+    brand: 'Iclusig®',
+    generation: '3ª Generación',
+    badgeColor: 'bg-rose-100 text-rose-800 border-rose-200',
+    howToTake: 'Una toma diaria con o sin alimentos. Fármaco altamente potente para la mutación T315I.',
+    foodRequirement: 'Con o sin alimentos',
+    keyEffects: 'Eventos oclusivos arteriales o vasculares, hipertensión, pancreatitis, sequedad de piel.',
+    monitoring: 'Monitoreo cardiovascular estricto, presión arterial, función pancreática y PCR.',
+    warning: 'Especial vigilancia cardiovascular; optimización de factores de riesgo vascular.'
+  },
+  {
+    name: 'Asciminib',
+    brand: 'Scemblix®',
+    generation: 'Inhibidor STAMP (4ª Gen)',
+    badgeColor: 'bg-teal-100 text-teal-800 border-teal-200',
+    howToTake: 'Mecanismo alostérico exclusivo. Se toma en ayunas (2 horas antes y 1 hora después).',
+    foodRequirement: 'En ayuno estricto',
+    keyEffects: 'Dolor articular, elevación leve de lipasa, trombocitopenia, fatiga.',
+    monitoring: 'Perfil pancreático y hemograma regular.',
+    warning: 'Terapia de última generación diseñada para perfiles refractarios o intolerantes.'
+  }
+];
+---
+
+<section id="medicamentos" class="py-24 bg-slate-50 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wider border border-emerald-200">
+        <HeartPulse class="w-3.5 h-3.5" />
+        <span>Fármacos e Inhibidores de Tirosina Quinasa</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight">
+        Guía Rápida de Medicamentos ITK
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+        Cada medicamento tiene requerimientos específicos de absorción, efectos secundarios y precauciones. Conoce a fondo el tratamiento que tu hematólogo ha seleccionado para ti.
+      </p>
+    </div>
+
+    <!-- Medication Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {medications.map((med) => (
+        <div class="rounded-3xl bg-white p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-blue/40 transition-all duration-300 flex flex-col justify-between space-y-6">
+          
+          <div class="space-y-4">
+            <!-- Card Header -->
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="text-2xl font-extrabold text-brand-dark">{med.name}</h3>
+                <span class="text-xs font-semibold text-slate-500">{med.brand}</span>
+              </div>
+              <span class={`text-[10px] font-bold px-2.5 py-1 rounded-full border ${med.badgeColor}`}>
+                {med.generation}
+              </span>
+            </div>
+
+            <!-- Food / Administration Badge -->
+            <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-700 font-semibold">
+              <Clock class="w-4 h-4 text-brand-blue shrink-0" />
+              <span>Condición de toma: <strong class="text-brand-dark">{med.foodRequirement}</strong></span>
+            </div>
+
+            <!-- How to take -->
+            <div class="space-y-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Cómo tomarlo</span>
+              <p class="text-xs text-slate-600 leading-relaxed">{med.howToTake}</p>
+            </div>
+
+            <!-- Key Effects -->
+            <div class="space-y-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Efectos a vigilar</span>
+              <p class="text-xs text-slate-600 leading-relaxed">{med.keyEffects}</p>
+            </div>
+
+            <!-- Monitoring -->
+            <div class="space-y-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Controles necesarios</span>
+              <p class="text-xs text-slate-600 leading-relaxed">{med.monitoring}</p>
+            </div>
+          </div>
+
+          <!-- Warning Box -->
+          <div class="p-3 rounded-xl bg-amber-50/80 border border-amber-200/80 text-[11px] text-amber-900 flex items-start gap-2">
+            <AlertTriangle class="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+            <span class="leading-tight">{med.warning}</span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- General Rule Callout -->
+    <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-brand-dark text-white border border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center md:text-left">
+        <h4 class="text-base font-extrabold text-white">¿Tienes dudas sobre interacciones con otros medicamentos?</h4>
+        <p class="text-xs sm:text-sm text-neutral-400">
+          Consulta siempre a tu médico o farmacéutico hospitalario antes de iniciar cualquier antibiótico, protector gástrico o analgésico.
+        </p>
+      </div>
+      <a 
+        href="/contacto" 
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-brand-lime text-brand-dark font-extrabold text-xs hover:bg-white transition-colors shrink-0"
+      >
+        <span>Hacer una consulta</span>
+      </a>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,206 @@
+---
+import { Home, BookOpen, BookMarked, Newspaper, MessageCircle, Compass, Menu, X, HeartHandshake } from 'lucide-astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 glass-nav transition-all duration-300" id="site-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-blue rounded-xl p-1" aria-label="SaludConCiencia - Inicio">
+        <div class="relative w-10 h-10 rounded-2xl bg-brand-dark flex items-center justify-center shadow-md overflow-hidden group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-gradient-to-tr from-brand-blue/30 via-transparent to-brand-lime/40 opacity-70"></div>
+          <span class="relative text-white font-extrabold text-lg tracking-tight flex items-center">
+            S<span class="text-brand-lime">C</span>
+          </span>
+          <div class="absolute -bottom-1 -right-1 w-2.5 h-2.5 bg-brand-lime rounded-full border-2 border-brand-dark"></div>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base sm:text-lg font-extrabold tracking-tight text-brand-dark leading-tight flex items-center gap-1">
+            Salud<span class="text-brand-blue">Con</span>Ciencia
+          </span>
+          <span class="text-[10px] sm:text-[11px] font-medium text-slate-500 tracking-wide uppercase">
+            Por Shirley Gaviria · LMC
+          </span>
+        </div>
+      </a>
+
+      <!-- Minimalist Desktop Navigation with Monochromatic Icons & Active Shading -->
+      <nav class="hidden lg:flex items-center gap-1.5" aria-label="Navegación principal">
+        <a 
+          href="/" 
+          class={`nav-link px-3.5 py-2 text-sm font-semibold rounded-full transition-all duration-200 flex items-center gap-2 ${
+            currentPath === '/' 
+              ? 'bg-brand-blue-soft text-brand-dark font-bold shadow-xs border border-brand-blue/30' 
+              : 'text-slate-600 hover:text-brand-dark hover:bg-slate-100/80'
+          }`}
+        >
+          <Home class="w-4 h-4 text-slate-500 group-hover:text-brand-dark" />
+          <span>Inicio</span>
+        </a>
+
+        <a 
+          href="/#modulos" 
+          class="nav-link px-3.5 py-2 text-sm font-semibold text-slate-600 hover:text-brand-dark hover:bg-slate-100/80 rounded-full transition-all duration-200 flex items-center gap-2"
+        >
+          <BookOpen class="w-4 h-4 text-slate-500" />
+          <span>Biblioteca</span>
+        </a>
+
+        <a 
+          href="/#libro" 
+          class="nav-link px-3.5 py-2 text-sm font-semibold text-slate-600 hover:text-brand-dark hover:bg-slate-100/80 rounded-full transition-all duration-200 flex items-center gap-2"
+        >
+          <BookMarked class="w-4 h-4 text-slate-500" />
+          <span>El Libro</span>
+        </a>
+
+        <a 
+          href="/#orientacion" 
+          class="nav-link px-3.5 py-2 text-sm font-semibold text-slate-600 hover:text-brand-dark hover:bg-slate-100/80 rounded-full transition-all duration-200 flex items-center gap-2"
+        >
+          <HeartHandshake class="w-4 h-4 text-slate-500" />
+          <span>Sesiones 1 a 1</span>
+        </a>
+
+        <a 
+          href="/blog" 
+          class={`nav-link px-3.5 py-2 text-sm font-semibold rounded-full transition-all duration-200 flex items-center gap-2 ${
+            currentPath.startsWith('/blog') 
+              ? 'bg-brand-blue-soft text-brand-dark font-bold shadow-xs border border-brand-blue/30' 
+              : 'text-slate-600 hover:text-brand-dark hover:bg-slate-100/80'
+          }`}
+        >
+          <Newspaper class="w-4 h-4 text-slate-500" />
+          <span>Blog</span>
+        </a>
+
+        <a 
+          href="/contacto" 
+          class={`nav-link px-3.5 py-2 text-sm font-semibold rounded-full transition-all duration-200 flex items-center gap-2 ${
+            currentPath.startsWith('/contacto') 
+              ? 'bg-brand-blue-soft text-brand-dark font-bold shadow-xs border border-brand-blue/30' 
+              : 'text-slate-600 hover:text-brand-dark hover:bg-slate-100/80'
+          }`}
+        >
+          <MessageCircle class="w-4 h-4 text-slate-500" />
+          <span>Contacto</span>
+        </a>
+      </nav>
+
+      <!-- Primary Action CTA (Clean & Minimalist) -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a 
+          href="/#ruta" 
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-dark hover:bg-black text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-glow-blue transition-all duration-300 group"
+        >
+          <Compass class="w-4 h-4 text-brand-lime group-hover:rotate-45 transition-transform duration-300" />
+          <span>Tu Ruta de Paciente</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button 
+        id="mobile-menu-button"
+        type="button" 
+        aria-label="Abrir menú de navegación"
+        class="lg:hidden p-2.5 rounded-xl bg-slate-100 text-slate-700 hover:text-brand-dark hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-blue"
+      >
+        <Menu id="icon-menu" class="w-6 h-6" />
+        <X id="icon-close" class="w-6 h-6 hidden" />
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Minimalist Dropdown -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 px-4 pt-3 pb-6 space-y-1.5 shadow-xl">
+    <a 
+      href="/" 
+      class={`mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
+        currentPath === '/' ? 'bg-brand-blue-soft text-brand-dark font-bold' : 'text-slate-700 hover:bg-slate-100'
+      }`}
+    >
+      <Home class="w-4 h-4 text-slate-500" />
+      <span>Inicio</span>
+    </a>
+    <a 
+      href="/#modulos" 
+      class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100"
+    >
+      <BookOpen class="w-4 h-4 text-slate-500" />
+      <span>Biblioteca de Módulos</span>
+    </a>
+    <a 
+      href="/#libro" 
+      class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100"
+    >
+      <BookMarked class="w-4 h-4 text-slate-500" />
+      <span>El Libro</span>
+    </a>
+    <a 
+      href="/#orientacion" 
+      class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-100"
+    >
+      <HeartHandshake class="w-4 h-4 text-slate-500" />
+      <span>Sesiones 1 a 1</span>
+    </a>
+    <a 
+      href="/blog" 
+      class={`mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
+        currentPath.startsWith('/blog') ? 'bg-brand-blue-soft text-brand-dark font-bold' : 'text-slate-700 hover:bg-slate-100'
+      }`}
+    >
+      <Newspaper class="w-4 h-4 text-slate-500" />
+      <span>Blog & Artículos</span>
+    </a>
+    <a 
+      href="/contacto" 
+      class={`mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
+        currentPath.startsWith('/contacto') ? 'bg-brand-blue-soft text-brand-dark font-bold' : 'text-slate-700 hover:bg-slate-100'
+      }`}
+    >
+      <MessageCircle class="w-4 h-4 text-slate-500" />
+      <span>Contacto</span>
+    </a>
+    <div class="pt-3 border-t border-slate-100">
+      <a href="/#ruta" class="mobile-nav-link flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-brand-dark text-white font-bold text-xs text-center shadow-md">
+        <Compass class="w-4 h-4 text-brand-lime" />
+        <span>Explorar Tu Ruta de Paciente</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (menuBtn && menu && iconMenu && iconClose) {
+    menuBtn.addEventListener('click', () => {
+      const isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        iconMenu.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        iconMenu.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        iconMenu.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+  }
+</script>

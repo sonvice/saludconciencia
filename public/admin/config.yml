@@ -1,0 +1,78 @@
+# Sveltia CMS Configuration for SaludConCiencia
+# Repo: https://github.com/sonvice/saludconciencia
+# Docs: https://sveltiacms.app/en/docs/config-basics
+
+backend:
+  name: github
+  repo: sonvice/saludconciencia
+  branch: main
+
+# Media files directory
+media_folder: "public/images"
+public_folder: "/images"
+
+# Locale settings
+locale: "es"
+
+# UI branding in Sveltia CMS
+site_url: "https://sonvice.github.io/saludconciencia"
+display_url: "https://saludconciencia.org"
+logo_url: "/favicon.svg"
+
+# Workflow
+publish_mode: simple
+
+collections:
+  - name: "blog"
+    label: "Artículos del Blog"
+    label_singular: "Artículo del Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}} — {{pubDate}} ({{category}})"
+    sortable_fields: ["pubDate", "title", "category"]
+    view_filters:
+      - label: "Diagnóstico"
+        field: "category"
+        pattern: "Diagnóstico"
+      - label: "Tratamientos e ITKs"
+        field: "category"
+        pattern: "Tratamientos e ITKs"
+      - label: "Vida Cotidiana"
+        field: "category"
+        pattern: "Vida Cotidiana"
+      - label: "Embarazo y Fertilidad"
+        field: "category"
+        pattern: "Embarazo y Fertilidad"
+      - label: "Salud Mental"
+        field: "category"
+        pattern: "Salud Mental"
+      - label: "Nutrición y Mitos"
+        field: "category"
+        pattern: "Nutrición y Mitos"
+    fields:
+      - { label: "Título del Artículo", name: "title", widget: "string", required: true }
+      - { label: "Descripción Breve", name: "description", widget: "text", required: true }
+      - { label: "Fecha de Publicación", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: true }
+      - { label: "Autor/a", name: "author", widget: "string", default: "Shirley Gaviria", required: true }
+      - { label: "Rol del Autor/a", name: "authorRole", widget: "string", default: "Bacterióloga & Paciente de LMC (+22 años)", required: true }
+      - { label: "Avatar del Autor/a", name: "authorAvatar", widget: "image", default: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80", required: false }
+      - label: "Categoría"
+        name: "category"
+        widget: "select"
+        required: true
+        options:
+          - "Diagnóstico"
+          - "Tratamientos e ITKs"
+          - "Vida Cotidiana"
+          - "Embarazo y Fertilidad"
+          - "Salud Mental"
+          - "Nutrición y Mitos"
+      - { label: "Imagen de Portada (URL o archivo)", name: "image", widget: "image", required: true }
+      - { label: "Texto Alternativo de Imagen", name: "imageAlt", widget: "string", required: true }
+      - { label: "Etiquetas", name: "tags", widget: "list", default: ["LMC", "Salud"] }
+      - { label: "¿Artículo Destacado en Portada?", name: "featured", widget: "boolean", default: false }
+      - { label: "Tiempo Estimado de Lectura", name: "readingTime", widget: "string", default: "5 min de lectura" }
+      - { label: "Contenido del Artículo (Markdown)", name: "body", widget: "markdown", required: true }

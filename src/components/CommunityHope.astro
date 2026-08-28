@@ -1,0 +1,61 @@
+---
+import { Heart, Sparkles, Send, CheckCircle2 } from 'lucide-astro';
+---
+
+<section class="py-24 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <div class="rounded-3xl bg-brand-dark text-white p-8 sm:p-14 border border-neutral-800 shadow-2xl relative overflow-hidden">
+      
+      <!-- Glowing Background Highlights -->
+      <div class="absolute -top-32 -right-32 w-96 h-96 bg-brand-lime/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-3xl mx-auto text-center space-y-8 relative z-10">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-lime text-brand-dark text-xs font-extrabold uppercase tracking-wider">
+          <Heart class="w-3.5 h-3.5 fill-brand-dark" />
+          <span>Comunidad & Esperanza</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+          "Bienvenid@. No estás sol@ en este camino."
+        </h2>
+
+        <p class="text-base sm:text-lg text-neutral-300 leading-relaxed font-serif">
+          Ojalá que, cuando termines de recorrer esta biblioteca, tengas muchas menos dudas que cuando llegaste. Y, sobre todo, que descubras que detrás de un diagnóstico hay una vida inmensa llena de proyectos y esperanza.
+        </p>
+
+        <!-- Newsletter Signup for Future Book & App Releases -->
+        <div class="pt-4 max-w-xl mx-auto">
+          <form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); alert('¡Gracias por unirte a la comunidad de SaludConCiencia! Recibirás nuestras guías y novedades.');">
+            <input 
+              type="email" 
+              required
+              placeholder="Ingresa tu correo electrónico..." 
+              class="flex-grow px-5 py-3.5 rounded-2xl bg-neutral-900/90 border border-neutral-700 text-white placeholder:text-neutral-500 text-sm focus:outline-none focus:ring-2 focus:ring-brand-lime transition-all"
+            />
+            <button 
+              type="submit" 
+              class="px-7 py-3.5 rounded-2xl bg-brand-lime hover:bg-white text-brand-dark font-extrabold text-sm transition-all duration-300 shadow-glow-lime flex items-center justify-center gap-2 shrink-0"
+            >
+              <span>Unirme a la Comunidad</span>
+              <Send class="w-4 h-4" />
+            </button>
+          </form>
+          <div class="flex items-center justify-center gap-4 text-[11px] text-neutral-400 mt-3">
+            <span class="flex items-center gap-1"><CheckCircle2 class="w-3.5 h-3.5 text-brand-lime" /> Sin spam</span>
+            <span>·</span>
+            <span>Acceso a nuevas guías y módulos</span>
+            <span>·</span>
+            <span>100% gratuito</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

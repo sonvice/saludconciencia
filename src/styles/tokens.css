@@ -1,0 +1,142 @@
+/**
+ * SaludConCiencia Design System Tokens
+ * Derived from brand palette: #131313 (Noir), #FFFFFF (White), #579BFC (Sky Blue), #D9EE53 (Vibrant Lime), #C8D1E1 & #E9EDF2 (Ice Slate)
+ */
+
+:root {
+  /* ==========================================================================
+     Color Tokens
+     ========================================================================== */
+  
+  /* Brand Core Colors */
+  --color-brand-dark: #131313;
+  --color-brand-light: #ffffff;
+  --color-brand-blue: #579bfc;
+  --color-brand-blue-rgb: 87, 155, 252;
+  --color-brand-blue-hover: #3e88f8;
+  --color-brand-blue-soft: #edf4fe;
+  
+  --color-brand-lime: #d9ee53;
+  --color-brand-lime-rgb: 217, 238, 83;
+  --color-brand-lime-hover: #c4da2c;
+  --color-brand-lime-soft: #fbfde8;
+  
+  --color-brand-slate: #c8d1e1;
+  --color-brand-slate-rgb: 200, 209, 225;
+  --color-brand-slate-light: #e9edf2;
+  --color-brand-slate-bg: #f5f8fc;
+  
+  /* Surfaces & Backgrounds */
+  --color-bg-base: #f8fafc;
+  --color-bg-canvas: #ffffff;
+  --color-bg-subtle: #f1f5f9;
+  --color-bg-card: #ffffff;
+  --color-bg-dark: #131313;
+  --color-bg-dark-card: #1c1c1c;
+  --color-bg-glass: rgba(255, 255, 255, 0.85);
+  --color-bg-glass-dark: rgba(19, 19, 19, 0.85);
+
+  /* Typography / Content Colors */
+  --color-text-primary: #131313;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #ffffff;
+  --color-text-inverse-muted: #cbd5e1;
+
+  /* Interactive States */
+  --color-interactive-primary: var(--color-brand-dark);
+  --color-interactive-accent: var(--color-brand-blue);
+  --color-interactive-vitality: var(--color-brand-lime);
+  
+  /* Borders */
+  --color-border-subtle: rgba(200, 209, 225, 0.45);
+  --color-border-default: #c8d1e1;
+  --color-border-strong: #94a3b8;
+  --color-border-focus: #579bfc;
+
+  /* ==========================================================================
+     Typography Tokens
+     ========================================================================== */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  --font-size-5xl: 3rem;      /* 48px */
+  --font-size-6xl: 3.75rem;   /* 60px */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.15;
+  --line-height-snug: 1.35;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+  --line-height-loose: 1.8;
+
+  --tracking-tight: -0.03em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.05em;
+
+  /* ==========================================================================
+     Spacing & Layout Tokens
+     ========================================================================== */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+  --space-32: 8rem;    /* 128px */
+
+  --container-max-width: 1280px;
+
+  /* ==========================================================================
+     Border Radius Tokens
+     ========================================================================== */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     Elevations & Shadows
+     ========================================================================== */
+  --shadow-subtle: 0 2px 10px rgba(19, 19, 19, 0.04);
+  --shadow-card: 0 10px 30px -5px rgba(19, 19, 19, 0.06), 0 4px 12px -2px rgba(19, 19, 19, 0.03);
+  --shadow-hover: 0 20px 40px -10px rgba(19, 19, 19, 0.12), 0 6px 16px -4px rgba(19, 19, 19, 0.04);
+  --shadow-glow-blue: 0 0 35px -5px rgba(87, 155, 252, 0.45);
+  --shadow-glow-lime: 0 0 35px -5px rgba(217, 238, 83, 0.45);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* ==========================================================================
+     Motion & Animation Tokens
+     ========================================================================== */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 600ms;
+  --duration-story: 1000ms;
+
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+}

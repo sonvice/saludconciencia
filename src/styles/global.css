@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Brand Core Colors extracted from image.png */
+  --color-brand-dark: #131313;
+  --color-brand-light: #ffffff;
+  
+  --color-brand-blue: #579bfc;
+  --color-brand-blue-hover: #3e88f8;
+  --color-brand-blue-soft: #edf4fe;
+  
+  --color-brand-lime: #d9ee53;
+  --color-brand-lime-hover: #c4da2c;
+  --color-brand-lime-soft: #fbfde8;
+  
+  --color-brand-slate: #c8d1e1;
+  --color-brand-slate-light: #e9edf2;
+  --color-brand-slate-bg: #f5f8fc;
+  --color-brand-slate-dark: #8b9bb4;
+  
+  --color-charcoal-900: #131313;
+  --color-charcoal-800: #1c1c1c;
+  --color-charcoal-700: #262626;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+
+  /* Shadows & Glows */
+  --shadow-glow-blue: 0 0 30px -5px rgba(87, 155, 252, 0.45);
+  --shadow-glow-lime: 0 0 30px -5px rgba(217, 238, 83, 0.45);
+  --shadow-card: 0 10px 30px -10px rgba(19, 19, 19, 0.07);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color: var(--color-brand-dark);
+    background-color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-lime);
+    color: var(--color-brand-dark);
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(200, 209, 225, 0.5);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 209, 225, 0.6);
+  box-shadow: var(--shadow-card);
+}
+
+/* Gradients */
+.gradient-hero-bg {
+  background: radial-gradient(1000px circle at 50% 10%, rgba(87, 155, 252, 0.14) 0%, rgba(217, 238, 83, 0.08) 35%, transparent 70%),
+              linear-gradient(180deg, #f8fafc 0%, #edf2f9 100%);
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #131313 30%, #579bfc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-slate);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-blue);
+}

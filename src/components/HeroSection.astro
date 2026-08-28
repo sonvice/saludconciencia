@@ -1,0 +1,178 @@
+---
+import { ArrowRight, Sparkles, ShieldCheck, Heart, MapPin, Pill, Check, BookOpen } from 'lucide-astro';
+---
+
+<section class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden gradient-hero-bg">
+  
+  <!-- Subtle Ambient Glows from palette -->
+  <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-brand-blue/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="absolute top-40 right-10 w-[450px] h-[350px] bg-brand-lime/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Left Content Column (7 cols) -->
+      <div class="lg:col-span-7 space-y-8 text-left" id="hero-content">
+        
+        <!-- Trust Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/90 border border-brand-slate/60 shadow-sm backdrop-blur-md">
+          <span class="flex h-2.5 w-2.5 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-lime opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-lime"></span>
+          </span>
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-800">
+            Ciencia · Vivencia · Esperanza en LMC
+          </span>
+          <span class="text-slate-300">|</span>
+          <span class="text-xs font-semibold text-brand-blue-600 flex items-center gap-1">
+            <ShieldCheck class="w-3.5 h-3.5" /> +22 Años de Vida
+          </span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-dark leading-[1.12]">
+          El conocimiento es el antídoto contra el <span class="gradient-text-blue">miedo</span>.
+        </h1>
+
+        <!-- Empathy Subheadline & Bio Quote -->
+        <div class="space-y-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+          <p class="font-medium text-slate-700">
+            Una plataforma interactiva de divulgación científica y acompañamiento humano creada para pacientes de <strong>Leucemia Mieloide Crónica</strong> y sus familias.
+          </p>
+          <div class="p-4 rounded-2xl bg-white/80 border-l-4 border-brand-lime border-y border-r border-slate-200/70 shadow-sm text-sm sm:text-base italic text-slate-700 font-serif">
+            "Hace más de 22 años yo también escuché esas palabras que cambiaron mi vida. Hoy la ciencia ha transformado la historia de esta enfermedad, y quiero acompañarte para que vivas este camino con serenidad y certeza."
+            <div class="not-italic font-sans text-xs font-bold text-slate-900 mt-2 flex items-center gap-2">
+              <span>— Shirley Gaviria</span>
+              <span class="text-slate-400">·</span>
+              <span class="text-slate-500 font-normal">Bacterióloga y Paciente de LMC</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+          <a 
+            href="#ruta" 
+            class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-brand-dark hover:bg-black text-white font-bold text-base shadow-xl hover:shadow-glow-blue transition-all duration-300 transform hover:-translate-y-0.5 group"
+          >
+            <span>Descubrir Mi Ruta de Paciente</span>
+            <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform text-brand-lime" />
+          </a>
+          <a 
+            href="#historia" 
+            class="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-base border border-slate-200 shadow-sm hover:border-brand-blue/50 transition-all duration-300"
+          >
+            <Sparkles class="w-5 h-5 text-brand-blue" />
+            <span>Conocer la Historia (22 Años)</span>
+          </a>
+        </div>
+
+        <!-- Quick Stats / Badges -->
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 max-w-xl">
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-extrabold text-brand-dark">+22</div>
+            <div class="text-xs font-semibold text-slate-500">Años conviviendo en plenitud</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-extrabold text-brand-blue">10</div>
+            <div class="text-xs font-semibold text-slate-500">Módulos de respuestas claras</div>
+          </div>
+          <div class="space-y-1">
+            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-600">100%</div>
+            <div class="text-xs font-semibold text-slate-500">Basado en evidencia científica</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Visual Column (5 cols) -->
+      <div class="lg:col-span-5 relative" id="hero-visual">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          
+          <!-- Decorative Frame / Background -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-brand-blue/20 via-brand-lime/20 to-transparent rounded-3xl transform rotate-2 scale-105 filter blur-xl opacity-70"></div>
+
+          <!-- Main Feature Card -->
+          <div class="relative rounded-3xl bg-white p-6 sm:p-8 shadow-2xl border border-slate-100/80 space-y-6">
+            
+            <!-- Card Header: Profile preview -->
+            <div class="flex items-center gap-4 pb-5 border-b border-slate-100">
+              <div class="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" 
+                  alt="Shirley Gaviria" 
+                  class="w-16 h-16 rounded-2xl object-cover border-2 border-brand-lime shadow-md"
+                />
+                <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-brand-blue text-white rounded-full flex items-center justify-center text-[10px] font-bold">
+                  <Check class="w-3 h-3 text-white stroke-[3]" />
+                </div>
+              </div>
+              <div>
+                <h3 class="text-base font-extrabold text-brand-dark">Shirley Gaviria</h3>
+                <p class="text-xs font-medium text-slate-500">Bacterióloga · Esp. Gerencia en Salud</p>
+                <div class="flex items-center gap-1.5 mt-1">
+                  <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span class="text-[11px] font-semibold text-emerald-700">Testimonio y Divulgación Científica</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Selector Prompt -->
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-2.5">
+              <div class="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center justify-between">
+                <span>Ruta Rápida Recomendada</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] bg-brand-lime font-bold text-brand-dark">Personalizada</span>
+              </div>
+              <div class="text-sm font-bold text-slate-900">
+                "¿En qué momento de tu proceso estás?"
+              </div>
+              <div class="space-y-2 pt-1">
+                <a href="#ruta" class="flex items-center justify-between p-2.5 rounded-xl bg-white hover:bg-brand-blue-soft border border-slate-200/80 hover:border-brand-blue/50 text-xs font-semibold text-slate-800 transition-colors group">
+                  <span class="flex items-center gap-2">
+                    <MapPin class="w-4 h-4 text-brand-blue" />
+                    <span>Acabo de recibir el diagnóstico</span>
+                  </span>
+                  <ArrowRight class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-blue group-hover:translate-x-0.5 transition-all" />
+                </a>
+                <a href="#ruta" class="flex items-center justify-between p-2.5 rounded-xl bg-white hover:bg-brand-lime-soft border border-slate-200/80 hover:border-brand-lime/60 text-xs font-semibold text-slate-800 transition-colors group">
+                  <span class="flex items-center gap-2">
+                    <Pill class="w-4 h-4 text-brand-lime-600" />
+                    <span>Estoy iniciando tratamiento ITK</span>
+                  </span>
+                  <ArrowRight class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-dark group-hover:translate-x-0.5 transition-all" />
+                </a>
+                <a href="#ruta" class="flex items-center justify-between p-2.5 rounded-xl bg-white hover:bg-rose-50 border border-slate-200/80 hover:border-rose-300 text-xs font-semibold text-slate-800 transition-colors group">
+                  <span class="flex items-center gap-2">
+                    <Heart class="w-4 h-4 text-rose-500" />
+                    <span>Quiero tener un hijo / Embarazo</span>
+                  </span>
+                  <ArrowRight class="w-3.5 h-3.5 text-slate-400 group-hover:text-rose-600 group-hover:translate-x-0.5 transition-all" />
+                </a>
+              </div>
+            </div>
+
+            <!-- Reassurance Pill -->
+            <div class="flex items-center gap-3 p-3 rounded-2xl bg-brand-slate-bg border border-brand-slate/40 text-xs text-slate-700">
+              <Heart class="w-5 h-5 text-rose-500 shrink-0" />
+              <span>Un espacio seguro para aprender, preguntar y caminar en confianza.</span>
+            </div>
+
+          </div>
+
+          <!-- Floating Badge Accent -->
+          <div class="absolute -bottom-5 -left-5 bg-brand-dark text-white p-4 rounded-2xl shadow-xl border border-neutral-700 hidden sm:flex items-center gap-3 animate-float-slow">
+            <div class="w-10 h-10 rounded-xl bg-brand-lime text-brand-dark flex items-center justify-center font-bold">
+              <Sparkles class="w-5 h-5 text-brand-dark" />
+            </div>
+            <div class="text-xs">
+              <div class="font-bold text-white">100+ Respuestas Directas</div>
+              <div class="text-slate-400">Organizadas en 10 módulos</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

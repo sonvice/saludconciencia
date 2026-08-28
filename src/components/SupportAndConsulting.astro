@@ -1,0 +1,171 @@
+---
+import { HeartHandshake, Coffee, MessageCircle, Calendar, CheckCircle2, ShieldCheck, ArrowRight, Sparkles, Heart } from 'lucide-astro';
+---
+
+<section id="orientacion" class="py-24 bg-slate-50 relative overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wider border border-emerald-200">
+        <HeartHandshake class="w-3.5 h-3.5" />
+        <span>Acompañamiento & Sostenibilidad</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight">
+        Orientación Personalizada y Apoyo al Proyecto
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+        SaludConCiencia es una iniciativa independiente. Descubre cómo puedes tener un espacio privado de escucha o contribuir para mantener esta biblioteca abierta y gratuita para todos.
+      </p>
+    </div>
+
+    <!-- Cards Grid: 2 Primary Options -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Option 1: Sesión de Orientación 1 a 1 -->
+      <div class="rounded-3xl bg-white p-8 sm:p-10 border-2 border-brand-blue/30 shadow-xl relative flex flex-col justify-between space-y-8 group hover:border-brand-blue transition-all duration-300">
+        
+        <div class="space-y-6">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-2xl bg-brand-blue-soft text-brand-blue flex items-center justify-center">
+              <Calendar class="w-6 h-6" />
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-brand-blue-soft text-brand-blue-700 border border-brand-blue/30">
+              Sesión Privada · 45 Minutos
+            </span>
+          </div>
+
+          <div class="space-y-2">
+            <h3 class="text-2xl font-extrabold text-brand-dark">
+              Orientación 1 a 1 con Shirley Gaviria
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed font-serif">
+              Un espacio confidencial y cálido por videollamada para pacientes recién diagnosticados o familiares que necesitan resolver dudas cotidianas, organizar sus consultas y encontrar calma.
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-2">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              ¿Qué incluye la sesión personalizada?
+            </div>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <span>Revisión y ayuda para redactar las preguntas clave para tu hematólogo.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <span>Estrategias prácticas de adherencia, alarmas y adaptación a efectos secundarios.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <span>Explicación didáctica de los términos de laboratorio (PCR, IS, Cariotipo).</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <span>Acompañamiento emocional y testimonio vivo de más de 22 años de superación.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+          <div>
+            <div class="text-xs text-slate-400">Aporte solidario por sesión</div>
+            <div class="text-xl font-extrabold text-brand-dark">Aporte voluntario / Tarifa accesible</div>
+          </div>
+          <a 
+            href="/contacto?asunto=solicitud-sesion-1-a-1" 
+            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-brand-dark hover:bg-black text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-glow-blue transition-all"
+          >
+            <MessageCircle class="w-4 h-4 text-brand-lime" />
+            <span>Solicitar Sesión 1 a 1</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Option 2: Apoyo Solidario al Proyecto ("Café Solidario") -->
+      <div class="rounded-3xl bg-white p-8 sm:p-10 border border-slate-200 shadow-sm relative flex flex-col justify-between space-y-8 hover:shadow-xl hover:border-amber-300 transition-all duration-300">
+        
+        <div class="space-y-6">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center">
+              <Coffee class="w-6 h-6" />
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-100 text-amber-800">
+              Sostenibilidad Comunitaria
+            </span>
+          </div>
+
+          <div class="space-y-2">
+            <h3 class="text-2xl font-extrabold text-brand-dark">
+              Apoya la Biblioteca Libre de LMC
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed font-serif">
+              Toda la biblioteca de 10 módulos y artículos es y seguirá siendo 100% gratuita. Si esta plataforma te ha servido o deseas apadrinar a otros pacientes, puedes invitarnos a un café solidario.
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-2">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              ¿A qué se destina tu contribución?
+            </div>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <span>Mantenimiento de servidores, dominio e infraestructura web.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <span>Creación continua de nuevas guías descargables en PDF para pacientes.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <span>Becas de orientación gratuita para personas en situación de vulnerabilidad.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+          <div>
+            <div class="text-xs text-slate-400">Micro-donación voluntaria</div>
+            <div class="text-sm font-extrabold text-slate-700">Desde $5 USD en adelante</div>
+          </div>
+          <a 
+            href="/contacto?asunto=apoyo-solidario" 
+            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs sm:text-sm shadow-md transition-colors"
+          >
+            <Heart class="w-4 h-4 fill-white" />
+            <span>Hacer un Aporte Solidario</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Communication Quick Direct Banner -->
+    <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-slate-900 text-white border border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+      <div class="space-y-1 text-center sm:text-left">
+        <h4 class="text-base font-extrabold text-white flex items-center justify-center sm:justify-start gap-2">
+          <MessageCircle class="w-5 h-5 text-brand-lime" />
+          <span>¿Prefieres comunicarte de inmediato con Shirley?</span>
+        </h4>
+        <p class="text-xs sm:text-sm text-neutral-400">
+          Escríbenos a través del formulario oficial o coordina directamente tus consultas de divulgación.
+        </p>
+      </div>
+      <a 
+        href="/contacto" 
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-brand-lime text-brand-dark font-extrabold text-xs hover:bg-white transition-colors shrink-0 shadow-glow-lime"
+      >
+        <span>Ir al Formulario de Contacto</span>
+        <ArrowRight class="w-4 h-4" />
+      </a>
+    </div>
+
+  </div>
+</section>

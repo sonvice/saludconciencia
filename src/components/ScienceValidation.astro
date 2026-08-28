@@ -1,0 +1,111 @@
+---
+import { Microscope, Award, CheckCircle2, HeartHandshake, ShieldCheck, Sparkles, BookOpen } from 'lucide-astro';
+---
+
+<section class="py-24 bg-white relative overflow-hidden border-y border-slate-100">
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Portrait & Credentials Badges -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative mx-auto max-w-md">
+          
+          <!-- Decorative background blur -->
+          <div class="absolute -top-4 -left-4 w-72 h-72 bg-brand-blue/20 rounded-full blur-2xl pointer-events-none"></div>
+          <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-brand-lime/25 rounded-full blur-2xl pointer-events-none"></div>
+
+          <!-- Main Image Frame -->
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
+            <img 
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" 
+              alt="Shirley Gaviria, Bacterióloga y Divulgadora en LMC" 
+              class="w-full h-[460px] object-cover object-top"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+              <span class="text-xs font-bold text-brand-lime uppercase tracking-wider">Divulgación Basada en Evidencia</span>
+              <h3 class="text-xl font-extrabold">Shirley Gaviria</h3>
+              <p class="text-xs text-slate-300">Bacterióloga · Esp. Gerencia en Salud · +22 Años LMC</p>
+            </div>
+          </div>
+
+          <!-- Floating Credential Card -->
+          <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-200 hidden sm:flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-blue-soft text-brand-blue flex items-center justify-center">
+              <Microscope class="w-5 h-5" />
+            </div>
+            <div>
+              <div class="text-xs font-extrabold text-brand-dark">Doble Perspectiva</div>
+              <div class="text-[10px] text-slate-500">Ciencia de laboratorio + Paciente</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Column: Rigor, Mission & Purpose -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blue-soft text-brand-blue-600 text-xs font-bold uppercase tracking-wider border border-brand-blue/20">
+          <ShieldCheck class="w-3.5 h-3.5" />
+          <span>Rigor Científico & Humanismo</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight">
+          La combinación que marca una diferencia real: entender la ciencia y vivirla cada día.
+        </h2>
+
+        <p class="text-base text-slate-600 leading-relaxed font-serif">
+          "Mi formación en bacteriología y gestión de servicios de salud me permite descifrar la citogenética, las cargas moleculares y la bioquímica de los fármacos. Pero es mi vivencia personal de más de 22 años la que me permite entender el miedo a la recaída, la fatiga y el valor de cada día."
+        </p>
+
+        <!-- Credentials Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <div class="flex items-center gap-2">
+              <Award class="w-4 h-4 text-brand-blue" />
+              <h4 class="text-sm font-extrabold text-brand-dark">Formación Médica y Científica</h4>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Bacterióloga con Especialización en Gerencia de Servicios de Salud y Máster en RRHH y Desarrollo de Talento.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <div class="flex items-center gap-2">
+              <HeartHandshake class="w-4 h-4 text-emerald-600" />
+              <h4 class="text-sm font-extrabold text-brand-dark">22+ Años de Convivencia</h4>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Superación de cambios de tratamiento, embarazo de alto riesgo, gestión de efectos adversos y vida familiar plena.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <div class="flex items-center gap-2">
+              <BookOpen class="w-4 h-4 text-purple-600" />
+              <h4 class="text-sm font-extrabold text-brand-dark">Primera Biblioteca en Español</h4>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Respuestas ordenadas a más de 100 dudas frecuentes recopiladas de consultas reales y foros médicos.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <div class="flex items-center gap-2">
+              <ShieldCheck class="w-4 h-4 text-amber-600" />
+              <h4 class="text-sm font-extrabold text-brand-dark">Compromiso Ético</h4>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Divulgación complementaria que empodera al paciente sin sustituir jamás el criterio del hematólogo tratante.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

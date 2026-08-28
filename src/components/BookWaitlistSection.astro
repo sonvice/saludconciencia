@@ -1,0 +1,162 @@
+---
+import { BookMarked, Sparkles, Send, CheckCircle2, Gift, Bell, Heart, ShieldCheck, User } from 'lucide-astro';
+---
+
+<section id="libro" class="py-24 bg-white relative overflow-hidden border-t border-slate-200/80">
+  
+  <!-- Subtle Ambient Glows -->
+  <div class="absolute -top-24 right-0 w-96 h-96 bg-amber-100/60 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-24 left-0 w-96 h-96 bg-brand-blue-soft/50 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <div class="rounded-3xl bg-slate-900 text-white p-8 sm:p-12 lg:p-16 border border-neutral-800 shadow-2xl relative overflow-hidden">
+      
+      <!-- Inner Ambient Highlight -->
+      <div class="absolute top-0 right-0 w-80 h-80 bg-brand-lime/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Book Preview Mockup (5 cols) -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          
+          <div class="relative w-full max-w-sm">
+            <!-- Glow behind book -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-brand-blue/30 via-brand-lime/20 to-amber-500/20 rounded-3xl blur-2xl transform rotate-3 scale-105"></div>
+            
+            <!-- Book Cover Mockup Card -->
+            <div class="relative rounded-3xl bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-8 border-2 border-neutral-700 shadow-2xl space-y-6 text-left">
+              
+              <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
+                <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 uppercase tracking-widest">
+                  Próximo Libro
+                </span>
+                <span class="text-xs text-neutral-400 font-serif">Edición Especial</span>
+              </div>
+
+              <div class="space-y-2">
+                <span class="text-xs font-bold text-brand-lime uppercase tracking-wider block">
+                  Guía Vivencial & Científica
+                </span>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
+                  Convivir con la Leucemia Mieloide Crónica
+                </h3>
+                <p class="text-xs text-neutral-400 font-serif italic">
+                  Más de dos décadas de ciencia, maternidad, resiliencia y esperanza.
+                </p>
+              </div>
+
+              <div class="pt-6 border-t border-neutral-800 flex items-center justify-between">
+                <div class="space-y-0.5">
+                  <div class="text-xs font-bold text-white">Shirley Gaviria</div>
+                  <div class="text-[10px] text-neutral-400">Bacterióloga & Paciente (+22 años)</div>
+                </div>
+                <div class="w-9 h-9 rounded-xl bg-brand-lime text-brand-dark flex items-center justify-center font-extrabold text-xs">
+                  SC
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Floating Benefit Badge -->
+            <div class="absolute -bottom-4 -right-4 bg-brand-dark p-3.5 rounded-2xl shadow-xl border border-neutral-700 hidden sm:flex items-center gap-2.5">
+              <Gift class="w-5 h-5 text-brand-lime" />
+              <div class="text-[11px] text-left">
+                <div class="font-bold text-white">Capítulo 1 de Muestra</div>
+                <div class="text-neutral-400">Gratis para la lista de espera</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right Column: Waitlist Description & Form (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/10 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/20">
+              <BookMarked class="w-3.5 h-3.5" />
+              <span>Lista de Espera Prioritaria</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              Sé el primero en acceder al libro cuando esté disponible
+            </h2>
+
+            <p class="text-sm sm:text-base text-neutral-300 leading-relaxed font-serif">
+              Shirley Gaviria está condensando más de 22 años de experiencia, conocimientos de bacteriología y respuestas prácticas en una obra pensada para acompañarte en tu mesita de noche.
+            </p>
+          </div>
+
+          <!-- Benefits List -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div class="flex items-center gap-2.5 text-xs text-neutral-300">
+              <CheckCircle2 class="w-4 h-4 text-brand-lime shrink-0" />
+              <span>Acceso prioritario y preventa con descuento</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-xs text-neutral-300">
+              <CheckCircle2 class="w-4 h-4 text-brand-lime shrink-0" />
+              <span>Primer capítulo digital gratuito de regalo</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-xs text-neutral-300">
+              <CheckCircle2 class="w-4 h-4 text-brand-lime shrink-0" />
+              <span>Invitación al evento virtual de presentación</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-xs text-neutral-300">
+              <CheckCircle2 class="w-4 h-4 text-brand-lime shrink-0" />
+              <span>Posibilidad de sugerir dudas para los capítulos</span>
+            </div>
+          </div>
+
+          <!-- Waitlist Registration Form -->
+          <form 
+            class="space-y-4 pt-2"
+            onsubmit="event.preventDefault(); alert('¡Muchas gracias por unirte a la lista de espera del libro! Te notificaremos de inmediato y te enviaremos el primer capítulo.'); (event.target as HTMLFormElement).reset();"
+          >
+            <div class="space-y-3">
+              <div>
+                <label for="waitlist-email" class="sr-only">Correo electrónico</label>
+                <input 
+                  type="email" 
+                  id="waitlist-email"
+                  required
+                  placeholder="Tu correo electrónico para enviarte la notificación..." 
+                  class="w-full px-5 py-3.5 rounded-2xl bg-neutral-800/90 border border-neutral-700 text-white placeholder:text-neutral-500 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all"
+                />
+              </div>
+
+              <div>
+                <label for="waitlist-message" class="sr-only">Mensaje opcional</label>
+                <input 
+                  type="text" 
+                  id="waitlist-message"
+                  placeholder="Mensaje opcional para Shirley o duda que te gustaría ver en el libro..." 
+                  class="w-full px-5 py-3.5 rounded-2xl bg-neutral-800/90 border border-neutral-700 text-white placeholder:text-neutral-500 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all"
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+              <button 
+                type="submit" 
+                class="px-8 py-3.5 rounded-2xl bg-brand-lime hover:bg-white text-brand-dark font-extrabold text-sm transition-all duration-300 shadow-glow-lime flex items-center justify-center gap-2"
+              >
+                <span>Anotarme en la Lista de Espera</span>
+                <Send class="w-4 h-4" />
+              </button>
+
+              <span class="text-[11px] text-neutral-400 text-center sm:text-left">
+                Sin spam · Notificación exclusiva cuando esté publicado
+              </span>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

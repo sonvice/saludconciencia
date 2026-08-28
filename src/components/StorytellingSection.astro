@@ -1,0 +1,283 @@
+---
+import { Sparkles, Heart, Baby, Dna, Microscope, Compass, CheckCircle2, ChevronRight, ArrowRight, ShieldCheck, TrendingUp, Clock } from 'lucide-astro';
+---
+
+<section id="historia" class="py-24 bg-white relative overflow-hidden">
+  
+  <!-- Subtle Background Decor -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-brand-slate-light/50 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-blue-soft/40 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header (Storytelling: Setting the Narrative Stakes) -->
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-20 story-header">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blue-soft text-brand-blue-600 text-xs font-bold uppercase tracking-wider border border-brand-blue/20">
+        <Sparkles class="w-3.5 h-3.5" />
+        <span>Storytelling Vivencial · 22 Años de Historia</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight">
+        "La ciencia transformó mi diagnóstico en vida; hoy te acompaño a vivir la tuya."
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-serif">
+        Una historia real que demuestra cómo el conocimiento científico y la resiliencia humana convierten la incertidumbre en un camino de esperanza activa.
+      </p>
+    </div>
+
+    <!-- Story Timeline with GSAP Interactive Animation -->
+    <div class="relative story-timeline max-w-5xl mx-auto">
+      
+      <!-- Central Animated Progress Line -->
+      <div class="hidden md:block absolute left-1/2 top-8 bottom-8 w-1 bg-slate-200 -translate-x-1/2 rounded-full overflow-hidden">
+        <div id="story-progress-bar" class="w-full bg-gradient-to-b from-brand-blue via-brand-lime to-brand-dark h-0 transition-all duration-300"></div>
+      </div>
+
+      <div class="space-y-16 md:space-y-24">
+        
+        <!-- Act I: The Impact & Uncertainty (2004) -->
+        <div class="story-item relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center" data-step="1">
+          <!-- Left Content -->
+          <div class="md:text-right space-y-3 md:pr-12">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">
+              <Clock class="w-3.5 h-3.5 text-slate-500" />
+              <span>2004 · El Impacto Inicial</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-brand-dark">
+              El diagnóstico y el frío de lo desconocido
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Hace más de veintidós años escuché esas palabras que paralizan a cualquiera: <em>Leucemia Mieloide Crónica</em>. El panorama era muy diferente al de hoy: las opciones de tratamiento eran limitadas, el futuro parecía una niebla impenetrable y las preguntas se acumulaban sin respuesta.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-xs text-slate-600 italic font-serif">
+              "Sé exactamente qué se siente estar en esa silla, sostener un sobre con resultados y no saber si podrás ver el futuro."
+            </div>
+          </div>
+          
+          <!-- Central Milestone Badge -->
+          <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl bg-brand-dark text-white items-center justify-center font-bold text-sm shadow-lg border-4 border-white z-20 story-badge">
+            <span class="text-brand-lime">01</span>
+          </div>
+
+          <!-- Right Visual / Image -->
+          <div class="md:pl-12">
+            <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 group relative">
+              <img 
+                src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" 
+                alt="Reflexión médica e incertidumbre inicial" 
+                class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-transparent to-transparent flex items-end p-6">
+                <span class="text-xs font-semibold text-white/95">
+                  El comienzo: aprender a convivir con la incertidumbre
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Act II: The Turning Point - Motherhood (2006) -->
+        <div class="story-item relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center" data-step="2">
+          <!-- Left Visual / Image -->
+          <div class="order-2 md:order-1 md:pr-12">
+            <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 group relative">
+              <img 
+                src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80" 
+                alt="Maternidad y decisión de vida" 
+                class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-transparent to-transparent flex items-end p-6">
+                <span class="text-xs font-semibold text-white/95">
+                  2006 · Una decisión guiada por el amor, la ciencia y la fe
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Central Milestone Badge -->
+          <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl bg-brand-blue text-white items-center justify-center font-bold text-sm shadow-lg border-4 border-white z-20 story-badge">
+            <Baby class="w-5 h-5" />
+          </div>
+
+          <!-- Right Content -->
+          <div class="order-1 md:order-2 md:pl-12 space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue-soft text-brand-blue-700 text-xs font-bold border border-brand-blue/30">
+              <Baby class="w-3.5 h-3.5" />
+              <span>2006 · La Mayor Decisión</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-brand-dark">
+              Dos años después: la decisión de ser mamá
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Quedé en embarazo cuando la literatura médica sobre gestación e inhibidores era casi inexistente. Muchos sugirieron interrumpir por el riesgo. Junto a mi equipo médico y mi convicción, decidí continuar con monitoreo estricto. Hoy mi hijo es un hombre adulto sano y fuerte.
+            </p>
+            <div class="flex items-center gap-2 text-xs font-semibold text-brand-blue-700">
+              <CheckCircle2 class="w-4 h-4 shrink-0 text-brand-blue" />
+              <span>"Cada paciente merece información clara para tomar decisiones sobre su propia vida."</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Act III: The Biological Revolution (The ITKs) -->
+        <div class="story-item relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center" data-step="3">
+          <!-- Left Content -->
+          <div class="md:text-right space-y-3 md:pr-12">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">
+              <TrendingUp class="w-3.5 h-3.5" />
+              <span>La Revolución Molecular</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-brand-dark">
+              Cuando la ciencia cambió el destino de la enfermedad
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Fui testigo directo de la revolución de los <strong>Inhibidores de Tirosina Quinasa (ITKs)</strong>. Lo que antes era un pronóstico fatal se convirtió en la primera gran victoria de la terapia molecular dirigida en oncología. La esperanza de vida hoy es equiparable a la de la población general.
+            </p>
+            <div class="flex items-center md:justify-end gap-2 text-xs font-bold text-slate-700">
+              <Dna class="w-4 h-4 text-brand-blue" />
+              <span>Precisión médica celular al alcance diario</span>
+            </div>
+          </div>
+
+          <!-- Central Milestone Badge -->
+          <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl bg-emerald-500 text-white items-center justify-center font-bold text-sm shadow-lg border-4 border-white z-20 story-badge">
+            <Microscope class="w-5 h-5" />
+          </div>
+
+          <!-- Right Visual / Image -->
+          <div class="md:pl-12">
+            <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 group relative">
+              <img 
+                src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" 
+                alt="Investigación médica y avances científicos" 
+                class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-transparent to-transparent flex items-end p-6">
+                <span class="text-xs font-semibold text-white/95">
+                  De enfermedad mortal a condición crónica con futuro
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Act IV: The Double Lens (Bacteriologist + Patient) -->
+        <div class="story-item relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center" data-step="4">
+          <!-- Left Visual / Image -->
+          <div class="order-2 md:order-1 md:pr-12">
+            <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 group relative">
+              <img 
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" 
+                alt="Bacterióloga y divulgación científica" 
+                class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-transparent to-transparent flex items-end p-6">
+                <span class="text-xs font-semibold text-white/95">
+                  Rigor de laboratorio + comprensión humana del paciente
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Central Milestone Badge -->
+          <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl bg-brand-lime text-brand-dark items-center justify-center font-bold text-sm shadow-lg border-4 border-white z-20 story-badge">
+            <ShieldCheck class="w-5 h-5" />
+          </div>
+
+          <!-- Right Content -->
+          <div class="order-1 md:order-2 md:pl-12 space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">
+              <Microscope class="w-3.5 h-3.5 text-slate-500" />
+              <span>La Doble Perspectiva</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-brand-dark">
+              Bacterióloga y paciente: traducir la ciencia al corazón
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Como bacterióloga y especialista en servicios de salud, conozco la biología de los leucocitos, la citogenética y las curvas de PCR cuantitativa. Como paciente, he vivido los calambres, los cambios de medicamento y la espera de resultados. Esa unión me permite explicarte la ciencia sin tecnicismos fríos.
+            </p>
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-700">
+              <CheckCircle2 class="w-4 h-4 shrink-0 text-emerald-600" />
+              <span>"Entender lo que ocurre dentro de tu cuerpo le quita poder al miedo."</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Act V: Climax & Resolution - Purpose Today -->
+        <div class="story-item relative p-8 sm:p-12 rounded-3xl bg-brand-dark text-white border border-neutral-800 shadow-2xl overflow-hidden text-center space-y-6" data-step="5">
+          <div class="absolute -top-24 -right-24 w-80 h-80 bg-brand-lime/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-brand-blue/20 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-lime text-brand-dark text-xs font-extrabold uppercase tracking-wider">
+            <Heart class="w-3.5 h-3.5 fill-brand-dark" />
+            <span>Hoy · Tu Propósito</span>
+          </div>
+
+          <h3 class="text-2xl sm:text-4xl font-extrabold tracking-tight max-w-2xl mx-auto leading-tight">
+            "La leucemia cambió mi vida, pero hoy mi propósito eres tú."
+          </h3>
+
+          <p class="text-sm sm:text-base text-neutral-300 max-w-2xl mx-auto leading-relaxed font-serif">
+            SaludConCiencia es el espacio que a mí me hubiera gustado encontrar hace 22 años. Una biblioteca estructurada, confiable y humana para que nunca camines en soledad.
+          </p>
+
+          <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+            <a 
+              href="#ruta" 
+              class="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-brand-lime text-brand-dark font-extrabold text-sm hover:bg-white transition-all duration-300 shadow-glow-lime group"
+            >
+              <span>Explorar Mi Ruta de Paciente</span>
+              <ChevronRight class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </a>
+            <a 
+              href="#modulos" 
+              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-neutral-800 text-white font-bold text-sm hover:bg-neutral-700 transition-all duration-300 border border-neutral-700"
+            >
+              <span>Ver los 10 Módulos de Conocimiento</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // @ts-ignore
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      // @ts-ignore
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Progress line animation
+      // @ts-ignore
+      gsap.to('#story-progress-bar', {
+        height: '100%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.story-timeline',
+          start: 'top 60%',
+          end: 'bottom 80%',
+          scrub: 0.5,
+        }
+      });
+
+      // Sequential entrance animations for story milestones
+      const storyItems = document.querySelectorAll('.story-item');
+      storyItems.forEach((item) => {
+        // @ts-ignore
+        gsap.from(item, {
+          opacity: 0,
+          y: 35,
+          duration: 0.75,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 82%',
+            toggleActions: 'play none none reverse',
+          }
+        });
+      });
+    }
+  });
+</script>

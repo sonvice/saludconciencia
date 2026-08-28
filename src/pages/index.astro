@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import StorytellingSection from '../components/StorytellingSection.astro';
+import InteractivePathNavigator from '../components/InteractivePathNavigator.astro';
+import ModuleExplorer from '../components/ModuleExplorer.astro';
+import MedicationGuide from '../components/MedicationGuide.astro';
+import BookWaitlistSection from '../components/BookWaitlistSection.astro';
+import SupportAndConsulting from '../components/SupportAndConsulting.astro';
+import ScienceValidation from '../components/ScienceValidation.astro';
+import CommunityHope from '../components/CommunityHope.astro';
+import { getCollection } from 'astro:content';
+import { ArrowRight, BookOpen, Clock, Calendar } from 'lucide-astro';
+
+// Fetch recent blog posts for preview
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+---
+
+<Layout 
+  title="SaludConCiencia | Leucemia Mieloide Crónica explicada con Ciencia y Empatía"
+  description="La primera biblioteca viva y humana especializada en Leucemia Mieloide Crónica (LMC). Por Shirley Gaviria, bacterióloga y paciente con más de 22 años de experiencia."
+>
+  <!-- Hero Section with Minimalist Aesthetic & Palette -->
+  <HeroSection />
+
+  <!-- GSAP Storytelling Section (22 Años de Historia) -->
+  <StorytellingSection />
+
+  <!-- Interactive Path Explorer "¿En qué momento estás?" -->
+  <InteractivePathNavigator />
+
+  <!-- 10 Knowledge Modules Explorer with Search -->
+  <ModuleExplorer />
+
+  <!-- ITK Medications Quick Guide -->
+  <MedicationGuide />
+
+  <!-- Book Waitlist Section (El Libro de Shirley Gaviria) -->
+  <BookWaitlistSection />
+
+  <!-- Support, 1-on-1 Mentoring & Sustainability Section -->
+  <SupportAndConsulting />
+
+  <!-- Scientific & Human Validation (Shirley Gaviria) -->
+  <ScienceValidation />
+
+  <!-- Blog Preview Section -->
+  <section class="py-24 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blue-soft text-brand-blue-600 text-xs font-bold uppercase tracking-wider">
+            <BookOpen class="w-3.5 h-3.5" />
+            <span>Biblioteca de Divulgación</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
+            Últimos Artículos & Guías Prácticas
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base max-w-2xl">
+            Artículos explicados desde la bacteriología y la vivencia real para acompañarte en tu día a día.
+          </p>
+        </div>
+
+        <a 
+          href="/blog" 
+          class="inline-flex items-center gap-2 text-sm font-bold text-brand-dark hover:text-brand-blue transition-colors group"
+        >
+          <span>Ver todos los artículos</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {sortedPosts.map((post) => (
+          <article class="rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-brand-blue/40 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="relative h-48 overflow-hidden">
+                <img 
+                  src={post.data.image} 
+                  alt={post.data.imageAlt} 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute top-4 left-4">
+                  <span class="px-3 py-1 rounded-full text-xs font-bold bg-white/90 backdrop-blur-md text-slate-800 shadow-sm">
+                    {post.data.category}
+                  </span>
+                </div>
+              </div>
+
+              <div class="p-6 space-y-3">
+                <div class="flex items-center gap-4 text-xs text-slate-500 font-medium">
+                  <span class="flex items-center gap-1">
+                    <Calendar class="w-3.5 h-3.5 text-slate-400" />
+                    {new Date(post.data.pubDate).toLocaleDateString('es-ES', { month: 'short', day: 'numeric', year: 'numeric' })}
+                  </span>
+                  <span>·</span>
+                  <span class="flex items-center gap-1">
+                    <Clock class="w-3.5 h-3.5 text-slate-400" />
+                    {post.data.readingTime}
+                  </span>
+                </div>
+
+                <h3 class="text-lg font-extrabold text-brand-dark group-hover:text-brand-blue transition-colors line-clamp-2 leading-snug">
+                  <a href={`/blog/${post.id}/`}>
+                    {post.data.title}
+                  </a>
+                </h3>
+
+                <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed">
+                  {post.data.description}
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2">
+              <a 
+                href={`/blog/${post.id}/`} 
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-dark group-hover:text-brand-blue transition-colors"
+              >
+                <span>Leer artículo completo</span>
+                <ArrowRight class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Community & Hope Manifesto -->
+  <CommunityHope />
+</Layout>

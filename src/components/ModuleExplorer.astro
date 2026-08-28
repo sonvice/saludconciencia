@@ -1,0 +1,339 @@
+---
+import { 
+  BookOpen, 
+  Search, 
+  ChevronDown, 
+  CheckCircle, 
+  Sparkles, 
+  Filter, 
+  Info, 
+  ArrowRight,
+  Dna,
+  Microscope,
+  Pill,
+  FlaskConical,
+  Stethoscope,
+  Utensils,
+  Baby,
+  Activity,
+  Brain,
+  Award
+} from 'lucide-astro';
+
+const modules = [
+  {
+    id: 'modulo-1',
+    number: '01',
+    title: 'Conociendo la LMC',
+    badge: 'Fundamentos Biológicos',
+    description: 'Comprende la biología de la médula ósea, el cromosoma Filadelfia, el gen BCR-ABL y las fases de la enfermedad.',
+    iconName: 'Dna',
+    questions: [
+      { q: '¿Qué es la Leucemia Mieloide Crónica?', a: 'Es un tipo de cáncer de la sangre y la médula ósea en el que se produce una cantidad excesiva de glóbulos blancos maduros e inmaduros (granulocitos).' },
+      { q: '¿Qué ocurre dentro de la médula ósea?', a: 'Las células madre hematopoyéticas sufren una alteración genética que les da la orden de dividirse sin control y no morir al ritmo normal.' },
+      { q: '¿Por qué aparece? ¿Es hereditaria o contagiosa?', a: 'No es hereditaria ni contagiosa. Ocurre por una mutación adquirida al azar a lo largo de la vida en una sola célula progenitora.' },
+      { q: '¿Qué es el cromosoma Filadelfia (Ph+)?', a: 'Es el resultado del intercambio de material genético (traslocación) entre los cromosomas 9 y 22: t(9;22)(q34;q11).' },
+      { q: '¿Qué es el gen de fusión BCR-ABL?', a: 'Es el gen resultante que produce una proteína tirosina quinasa hiperactiva causante del crecimiento tumoral, blanco exacto de los medicamentos ITK.' },
+      { q: '¿Qué significa estar en fase crónica, acelerada o blástica?', a: 'Fase crónica (más del 90% de los diagnósticos, fácilmente controlable), fase acelerada y fase blástica (comportamiento similar a leucemia aguda que requiere tratamiento intensivo).' }
+    ]
+  },
+  {
+    id: 'modulo-2',
+    number: '02',
+    title: 'Diagnóstico y Exámenes',
+    badge: 'Laboratorio y Pruebas',
+    description: 'Aprende a interpretar tus análisis: hemograma, aspirado de médula, cariotipo y PCR cuantitativa en Escala Internacional.',
+    iconName: 'Microscope',
+    questions: [
+      { q: '¿Cuáles son los primeros síntomas habituales?', a: 'Muchas veces es asintomática y se descubre en un chequeo rutinario. En otros casos: fatiga, pérdida de peso involuntaria, sudoración nocturna o saciedad precoz por bazo inflamado.' },
+      { q: '¿Qué diferencia hay entre aspirado y biopsia de médula?', a: 'El aspirado extrae la porción líquida celular para cariotipo y citometría; la biopsia extrae un fragmento sólido de hueso para evaluar la estructura y densidad.' },
+      { q: '¿Qué es la PCR cuantitativa y la Escala Internacional (IS)?', a: 'Es la prueba molecular más sensible que mide la cantidad exacta de copias de BCR-ABL en sangre respecto a un gen control estandarizado.' },
+      { q: '¿Cada cuánto tiempo deben realizarse los controles?', a: 'Habitualmente cada 3 meses hasta lograr una Respuesta Molecular Mayor estable, y luego cada 3 a 6 meses según pauta médica.' }
+    ]
+  },
+  {
+    id: 'modulo-3',
+    number: '03',
+    title: 'Tratamiento e ITK',
+    badge: 'Estrategia Terapéutica',
+    description: 'Cómo actúan los inhibidores de tirosina quinasa, líneas de tratamiento, resistencia y la meta de la Remisión Libre de Tratamiento (TFR).',
+    iconName: 'Pill',
+    questions: [
+      { q: '¿Qué son los ITK y cómo funcionan?', a: 'Son fármacos orales dirigidos que bloquean específicamente la proteína BCR-ABL impidiendo que las células leucémicas sigan proliferando.' },
+      { q: '¿Cuántas líneas de tratamiento existen?', a: 'Existen múltiples líneas (1ª, 2ª, 3ª y 4ª generación), permitiendo cambiar de medicamento si hay falta de eficacia o intolerancia.' },
+      { q: '¿Qué diferencia hay entre resistencia e intolerancia?', a: 'La resistencia ocurre cuando la leucemia muta y el fármaco deja de actuar; la intolerancia se da cuando el paciente no tolera los efectos adversos.' },
+      { q: '¿Qué es la Remisión Libre de Tratamiento (TFR)?', a: 'La posibilidad de suspender el medicamento bajo estricto control médico en pacientes seleccionados con respuesta molecular profunda y sostenida por varios años.' }
+    ]
+  },
+  {
+    id: 'modulo-4',
+    number: '04',
+    title: 'Medicamentos ITK',
+    badge: 'Fármacos en Detalle',
+    description: 'Fichas completas de Imatinib, Dasatinib, Nilotinib, Bosutinib, Ponatinib y Asciminib.',
+    iconName: 'FlaskConical',
+    questions: [
+      { q: 'Imatinib (Glivec)', a: 'El primer ITK histórico. Se toma siempre con una comida abundante y abundante agua.' },
+      { q: 'Dasatinib (Sprycel)', a: 'ITK de 2ª generación potente, se toma una vez al día con o sin alimentos. Requiere vigilancia de derrame pleural.' },
+      { q: 'Nilotinib (Tasigna)', a: 'ITK de 2ª generación tomado dos veces al día en ayuno estricto (2 horas antes y 1 hora después).' },
+      { q: 'Bosutinib, Ponatinib y Asciminib', a: 'Terapias avanzadas para mutaciones específicas (como T315I con Ponatinib) o inhibición alostérica (STAMP con Asciminib).' }
+    ]
+  },
+  {
+    id: 'modulo-5',
+    number: '05',
+    title: 'Efectos Secundarios',
+    badge: 'Manejo de Síntomas',
+    description: 'Estrategias probadas para sobrellevar la fatiga, calambres, retención de líquidos, náuseas y toxicidades.',
+    iconName: 'Stethoscope',
+    questions: [
+      { q: '¿Cómo aliviar los calambres musculares y dolores óseos?', a: 'Hidratación abundante, revisión de niveles de magnesio/calcio y estiramientos suaves diarios.' },
+      { q: '¿Qué hacer ante el edema (hinchazón de párpados o tobillos)?', a: 'Reducir la sal en las comidas, elevar las piernas al descansar y notificar al hematólogo.' },
+      { q: '¿Son reversibles los efectos secundarios?', a: 'La inmensa mayoría disminuyen tras las primeras semanas de adaptación o al ajustar la pauta médica.' }
+    ]
+  },
+  {
+    id: 'modulo-6',
+    number: '06',
+    title: 'Alimentación y Mitos',
+    badge: 'Nutrición Basada en Evidencia',
+    description: 'La interacción crítica del Pomelo (CYP3A4), alcohol, café, suplementación y dietas saludables.',
+    iconName: 'Utensils',
+    questions: [
+      { q: '¿Por qué está estrictamente prohibido el pomelo (toronja)?', a: 'Inhibe la enzima CYP3A4 en el hígado, elevando los niveles del fármaco a rangos tóxicos.' },
+      { q: '¿Puedo consumir alcohol o café?', a: 'Café con moderación. Alcohol solo de forma muy ocasional y moderada, cuidando la función hepática.' },
+      { q: '¿Debo hacer dietas extremas (keto, ayuno estricto)?', a: 'No se recomiendan dietas restrictivas. Se aconseja una alimentación mediterránea rica en nutrientes naturales y proteínas de calidad.' }
+    ]
+  },
+  {
+    id: 'modulo-7',
+    number: '07',
+    title: 'Embarazo y Fertilidad',
+    badge: 'Maternidad y Paternidad',
+    description: 'Planificación familiar, seguridad en hombres y mujeres, lactancia y opciones durante la gestación.',
+    iconName: 'Baby',
+    questions: [
+      { q: '¿Puede una mujer con LMC ser madre?', a: 'Sí, planificando la concepción en Remisión Molecular Profunda y con seguimiento conjunto de hematología y obstetricia de alto riesgo.' },
+      { q: '¿Puede un hombre con LMC ser padre tomando ITK?', a: 'Sí. La evidencia actual demuestra que los ITKs estándar no incrementan el riesgo de malformaciones fetales a través del esperma.' },
+      { q: '¿Qué opciones existen si se requiere tratamiento durante el embarazo?', a: 'Uso de terapias puente seguras como Interferón o técnicas de soporte como la leucoféresis.' }
+    ]
+  },
+  {
+    id: 'modulo-8',
+    number: '08',
+    title: 'Vida Diaria y Hábitos',
+    badge: 'Rutina y Autonomía',
+    description: 'Trabajo, deporte, viajes, vacunas, tatuajes, analgésicos y cirugías.',
+    iconName: 'Activity',
+    questions: [
+      { q: '¿Puedo trabajar y hacer deporte con normalidad?', a: 'Sí. Mantenerse activo profesional y físicamente es uno de los mejores factores para la salud física y mental.' },
+      { q: '¿Qué precauciones debo tener al viajar?', a: 'Llevar siempre la medicación en el equipaje de mano con receta médica e informe en inglés/español.' },
+      { q: '¿Puedo vacunarme o tatuarme?', a: 'Vacunas inactivadas sí (gripe, COVID, etc.); vacunas de virus vivos atenuados requieren consulta con hematología. Tatuajes requieren hemograma con plaquetas y neutrófilos normales.' }
+    ]
+  },
+  {
+    id: 'modulo-9',
+    number: '09',
+    title: 'Salud Mental y Emociones',
+    badge: 'Bienestar Psicoemocional',
+    description: 'Manejo de la ansiedad, el miedo a la recaída, cómo hablar con los hijos y recuperar la ilusión.',
+    iconName: 'Brain',
+    questions: [
+      { q: '¿Cómo afrontar el miedo antes de recibir los resultados de la PCR?', a: 'Técnicas de respiración, enfocar la atención en el presente y recordar que las variaciones leves son normales.' },
+      { q: '¿Cómo comunicar el diagnóstico a la familia e hijos?', a: 'Con honestidad serena, adaptando el lenguaje a su edad y transmitiendo que es una enfermedad tratable con la que se vive.' },
+      { q: '¿Cómo recuperar la ilusión de hacer planes a futuro?', a: 'Estableciendo metas a corto y largo plazo; la ciencia actual te acompaña para vivir décadas con calidad.' }
+    ]
+  },
+  {
+    id: 'modulo-10',
+    number: '10',
+    title: 'La Historia de Shirley',
+    badge: '22 Años de Testimonio',
+    description: 'Diagnóstico en 2004, embarazo de alto riesgo, recaídas, aprendizajes y el mensaje de esperanza.',
+    iconName: 'Award',
+    questions: [
+      { q: '¿Qué le diría Shirley a su yo recién diagnosticada?', a: '"No tengas miedo: la vida que viene después del diagnóstico es inmensa, hermosa y llena de logros y amor."' },
+      { q: '¿Qué fue lo más valioso que aprendió en estos 22 años?', a: 'Que el conocimiento médico riguroso te da la libertad de vivir sin pánico y ser protagonista de tu salud.' },
+      { q: '¿Cuál es el mayor mensaje para los pacientes de hoy?', a: '"No estás solo. Detrás de cada examen y de cada día hay una comunidad que camina contigo."' }
+    ]
+  }
+];
+---
+
+<section id="modulos" class="py-24 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blue-soft text-brand-blue-600 text-xs font-bold uppercase tracking-wider border border-brand-blue/20">
+        <BookOpen class="w-3.5 h-3.5" />
+        <span>Biblioteca Estructurada</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight">
+        Los 10 Módulos de Conocimiento
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+        Toda la información médica y humana organizada en módulos temáticos para responder con claridad y rigor cada una de tus dudas.
+      </p>
+    </div>
+
+    <!-- Search & Filter Bar (Heuristic #7: Flexibility and Efficiency of use) -->
+    <div class="max-w-2xl mx-auto mb-12">
+      <div class="relative">
+        <Search class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+        <input 
+          type="text" 
+          id="module-search-input"
+          placeholder="Buscar dudas (ej: PCR, pomelo, embarazo, calambres, Imatinib)..." 
+          class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue focus:bg-white transition-all shadow-sm"
+        />
+      </div>
+    </div>
+
+    <!-- Modules Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" id="modules-grid-container">
+      {modules.map((mod) => (
+        <div 
+          id={mod.id}
+          class="module-card rounded-3xl bg-slate-50 hover:bg-white border border-slate-200/80 p-6 sm:p-8 transition-all duration-300 hover:shadow-xl hover:border-brand-blue/40 group relative flex flex-col justify-between"
+          data-keywords={`${mod.title} ${mod.description} ${mod.badge} ${mod.questions.map(q => q.q + ' ' + q.a).join(' ')}`}
+        >
+          
+          <div class="space-y-4">
+            <!-- Module Top Header -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-brand-blue">
+                  {mod.iconName === 'Dna' && <Dna class="w-5 h-5" />}
+                  {mod.iconName === 'Microscope' && <Microscope class="w-5 h-5" />}
+                  {mod.iconName === 'Pill' && <Pill class="w-5 h-5" />}
+                  {mod.iconName === 'FlaskConical' && <FlaskConical class="w-5 h-5" />}
+                  {mod.iconName === 'Stethoscope' && <Stethoscope class="w-5 h-5" />}
+                  {mod.iconName === 'Utensils' && <Utensils class="w-5 h-5" />}
+                  {mod.iconName === 'Baby' && <Baby class="w-5 h-5" />}
+                  {mod.iconName === 'Activity' && <Activity class="w-5 h-5" />}
+                  {mod.iconName === 'Brain' && <Brain class="w-5 h-5" />}
+                  {mod.iconName === 'Award' && <Award class="w-5 h-5" />}
+                </div>
+                <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white text-slate-700 border border-slate-200 shadow-sm">
+                  Módulo {mod.number}
+                </span>
+              </div>
+              <span class="text-xs font-semibold text-brand-blue-600 bg-brand-blue-soft px-2.5 py-1 rounded-full">
+                {mod.badge}
+              </span>
+            </div>
+
+            <!-- Title & Description -->
+            <div>
+              <h3 class="text-xl font-extrabold text-brand-dark group-hover:text-brand-blue transition-colors">
+                {mod.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                {mod.description}
+              </p>
+            </div>
+
+            <!-- Questions Preview / Accordion -->
+            <div class="pt-2 space-y-2.5 border-t border-slate-200/60">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                Preguntas frecuentes desarrolladas:
+              </div>
+              
+              <div class="space-y-2">
+                {mod.questions.slice(0, 3).map((item) => (
+                  <details class="group/faq rounded-xl bg-white p-3 border border-slate-200/60 text-xs transition-colors">
+                    <summary class="font-bold text-slate-800 cursor-pointer list-none flex items-center justify-between gap-2">
+                      <span>{item.q}</span>
+                      <ChevronDown class="w-3.5 h-3.5 text-slate-400 group-open/faq:rotate-180 transition-transform shrink-0" />
+                    </summary>
+                    <p class="mt-2 text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
+                      {item.a}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Card Footer Action -->
+          <div class="pt-4 mt-4 border-t border-slate-200/50 flex items-center justify-between text-xs">
+            <span class="text-slate-500 font-medium">
+              {mod.questions.length} preguntas en este módulo
+            </span>
+            <a 
+              href={`#${mod.id}`} 
+              class="font-bold text-brand-dark hover:text-brand-blue flex items-center gap-1 group-hover:translate-x-1 transition-all"
+            >
+              <span>Explorar módulo</span>
+              <ArrowRight class="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Empty Search State (Heuristic #9: Help users recognize, diagnose, and recover from errors) -->
+    <div id="no-modules-match" class="hidden text-center py-12 space-y-3">
+      <Info class="w-8 h-8 text-slate-400 mx-auto" />
+      <p class="text-slate-600 text-sm">No encontramos preguntas que coincidan con tu búsqueda.</p>
+      <button 
+        type="button" 
+        id="clear-search-btn"
+        class="text-xs font-bold text-brand-blue hover:underline"
+      >
+        Limpiar búsqueda y ver todos los módulos
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('module-search-input') as HTMLInputElement;
+    const cards = document.querySelectorAll('.module-card');
+    const noMatch = document.getElementById('no-modules-match');
+    const clearBtn = document.getElementById('clear-search-btn');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const keywords = card.getAttribute('data-keywords')?.toLowerCase() || '';
+          if (keywords.includes(query)) {
+            // @ts-ignore
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            // @ts-ignore
+            card.style.display = 'none';
+          }
+        });
+
+        if (noMatch) {
+          if (visibleCount === 0) {
+            noMatch.classList.remove('hidden');
+          } else {
+            noMatch.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    if (clearBtn && searchInput) {
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        cards.forEach(card => {
+          // @ts-ignore
+          card.style.display = 'flex';
+        });
+        if (noMatch) noMatch.classList.add('hidden');
+      });
+    }
+  });
+</script>

@@ -1,0 +1,423 @@
+---
+import { 
+  Compass, 
+  CheckCircle2, 
+  ArrowRight, 
+  HelpCircle, 
+  Heart, 
+  Sparkles, 
+  BookOpen, 
+  MapPin, 
+  Pill, 
+  RefreshCw, 
+  Activity, 
+  Baby, 
+  FlaskConical, 
+  Smile, 
+  Users 
+} from 'lucide-astro';
+
+const routes = [
+  {
+    id: 'diagnostico',
+    iconName: 'MapPin',
+    badge: 'Recién diagnosticado',
+    title: 'Acabo de recibir el diagnóstico',
+    subtitle: 'El impacto inicial puede ser abrumador. Respira: la LMC hoy cuenta con tratamientos altamente efectivos.',
+    priorities: [
+      'Confirmar que la LMC es una condición crónica tratable y diferente a las leucemias agudas.',
+      'Aprender los conceptos básicos: Médula ósea, Cromosoma Filadelfia y gen BCR-ABL.',
+      'Evitar búsquedas no verificadas en internet que generen angustia.',
+      'Identificar la fase de la enfermedad (la gran mayoría inicia en fase crónica).'
+    ],
+    doctorQuestions: [
+      '¿En qué fase de la enfermedad me encuentro?',
+      '¿Cuál es el ITK de primera línea recomendado para mi caso?',
+      '¿Cómo debo tomar el medicamento y qué efectos iniciales debo esperar?',
+      '¿Cada cuánto tiempo realizaremos controles de sangre y PCR cuantitativa?'
+    ],
+    recommendedModules: [
+      { num: '01', name: 'Conociendo la LMC', href: '#modulo-1' },
+      { num: '02', name: 'Diagnóstico y Exámenes', href: '#modulo-2' },
+      { num: '09', name: 'Salud Mental y Emociones', href: '#modulo-9' }
+    ],
+    quote: '"El diagnóstico asusta porque es desconocido. Cuando entiendes cómo funciona la terapia dirigida, el miedo da paso a la acción y la esperanza."'
+  },
+  {
+    id: 'iniciando',
+    iconName: 'Pill',
+    badge: 'Inicio de ITK',
+    title: 'Estoy iniciando tratamiento',
+    subtitle: 'La clave del éxito terapéutico es la adherencia: tomar el fármaco correcto, a la hora correcta, de la forma correcta.',
+    priorities: [
+      'Establecer una rutina diaria fija con alarmas para no olvidar ninguna toma.',
+      'Conocer las instrucciones de absorción: con comida (Imatinib/Bosutinib) o en ayunas (Nilotinib).',
+      'Eliminar por completo el pomelo (toronja) y consultar antes de tomar cualquier otro fármaco.',
+      'Tener paciencia: los primeros meses el cuerpo se adapta al tratamiento.'
+    ],
+    doctorQuestions: [
+      '¿Qué debo hacer si presento náuseas o vómitos tras tomar la dosis?',
+      '¿Qué analgésicos o antiinflamatorios puedo tomar con mi ITK?',
+      '¿Cuándo evaluaremos la primera respuesta hematológica (hemograma)?',
+      '¿A qué número de urgencias puedo comunicarme ante una duda importante?'
+    ],
+    recommendedModules: [
+      { num: '03', name: 'Tratamiento e ITK', href: '#modulo-3' },
+      { num: '04', name: 'Medicamentos ITK', href: '#modulo-4' },
+      { num: '06', name: 'Alimentación y Mitos', href: '#modulo-6' }
+    ],
+    quote: '"La adherencia rigurosa no es una obligación: es el regalo diario que le das a tus células para mantener la leucemia bajo control absoluto."'
+  },
+  {
+    id: 'cambio',
+    iconName: 'RefreshCw',
+    badge: 'Cambio de línea',
+    title: 'Estoy cambiando de medicamento',
+    subtitle: 'El cambio de ITK es una estrategia médica habitual para optimizar tu respuesta o mejorar tu tolerancia.',
+    priorities: [
+      'Comprender la diferencia entre resistencia (mutaciones) e intolerancia (efectos secundarios).',
+      'Realizar estudio mutacional si el hematólogo lo considera necesario (ej. mutación T315I).',
+      'Aprovechar la existencia de múltiples líneas de tratamiento (2da, 3ra y nuevas generaciones).',
+      'Mantener la tranquilidad: cambiar de ITK no significa que la enfermedad sea incurable.'
+    ],
+    doctorQuestions: [
+      '¿Cuál es la razón principal del cambio: respuesta insuficiente o efectos secundarios?',
+      '¿Se realizó un estudio de mutaciones del gen BCR-ABL?',
+      '¿Cuáles son las particularidades y cuidados del nuevo medicamento?',
+      '¿En cuántos meses evaluaremos la nueva respuesta molecular?'
+    ],
+    recommendedModules: [
+      { num: '03', name: 'Tratamiento e ITK', href: '#modulo-3' },
+      { num: '04', name: 'Guía de Fármacos', href: '#modulo-4' },
+      { num: '05', name: 'Efectos Secundarios', href: '#modulo-5' }
+    ],
+    quote: '"Tener más de cinco opciones terapéuticas distintas es una de las grandes victorias de la ciencia médica moderna en LMC."'
+  },
+  {
+    id: 'secundarios',
+    iconName: 'Activity',
+    badge: 'Calidad de vida',
+    title: 'Tengo efectos secundarios',
+    subtitle: 'Fatiga, calambres, náuseas o retención de líquidos: casi todos tienen solución o estrategias de alivio.',
+    priorities: [
+      'Registrar un diario de síntomas: fecha, intensidad y momento del día en que aparecen.',
+      'Diferenciar efectos secundarios transitorios (primeras semanas) de efectos persistentes.',
+      'Consultar suplementación de magnesio o calcio si hay calambres musculares.',
+      'Jamás reducir la dosis o suspender el fármaco sin indicación de tu hematólogo.'
+    ],
+    doctorQuestions: [
+      '¿Existe medicación coadyuvante segura para controlar mis síntomas específicos?',
+      '¿Podemos ajustar el horario de la toma para minimizar las molestias?',
+      '¿Mis análisis de electrolitos y función hepática/renal están en rangos adecuados?',
+      '¿Cuándo se consideraría necesaria una reducción temporal de dosis?'
+    ],
+    recommendedModules: [
+      { num: '05', name: 'Efectos Secundarios', href: '#modulo-5' },
+      { num: '06', name: 'Alimentación y Hábitos', href: '#modulo-6' },
+      { num: '08', name: 'Vida Diaria y Rutina', href: '#modulo-8' }
+    ],
+    quote: '"Vivir con LMC no significa resignarse al malestar. La comunicación abierta con tu médico permite afinar tu calidad de vida."'
+  },
+  {
+    id: 'hijos',
+    iconName: 'Baby',
+    badge: 'Maternidad y paternidad',
+    title: 'Quiero tener un hijo / Embarazo',
+    subtitle: 'La maternidad y paternidad son posibles con LMC. Requieren planificación médica estricta y remisión profunda.',
+    priorities: [
+      'Planificar la concepción exclusivamente en conjunto con tu hematólogo y ginecólogo obstetra.',
+      'Para mujeres: evaluar si se cumple el criterio de Remisión Molecular Profunda estable (DMR/TFR).',
+      'Para hombres: conocer la evidencia sobre seguridad en la descendencia con ITKs estándar.',
+      'Conocer alternativas de tratamiento puente si se requiere durante la gestación.'
+    ],
+    doctorQuestions: [
+      '¿Mi nivel actual de PCR (MR4 / MR4.5) me permite plantear un embarazo seguro?',
+      '¿Cuál es el protocolo de seguimiento y cada cuántas semanas mediremos la PCR?',
+      '¿Qué opciones de manejo existen si la PCR llegara a elevarse durante el embarazo?',
+      '¿Cómo planificaremos la lactancia materna de acuerdo con la medicación?'
+    ],
+    recommendedModules: [
+      { num: '07', name: 'Embarazo y Fertilidad', href: '#modulo-7' },
+      { num: '10', name: 'La Historia de Shirley', href: '#modulo-10' },
+      { num: '09', name: 'Salud Mental y Familia', href: '#modulo-9' }
+    ],
+    quote: '"Mi hijo nació hace 20 años en un contexto de altísima incertidumbre. Hoy la ciencia te ofrece caminos guiados y seguros."'
+  },
+  {
+    id: 'examenes',
+    iconName: 'FlaskConical',
+    badge: 'Resultados y PCR',
+    title: 'No entiendo mis exámenes',
+    subtitle: 'PCR, IS, Cariotipo, Carga Molecular, MR3, MR4.5... Aprende a interpretar tus informes de laboratorio.',
+    priorities: [
+      'Comprender la Escala Internacional (IS) de la PCR cuantitativa.',
+      'Conocer los hitos temporales: BCR-ABL < 10% (3 meses), < 1% (6 meses), < 0.1% MR3 (12 meses).',
+      'No asustarse por pequeñas variaciones técnicas decimales entre dos análisis.',
+      'Llevar un archivo ordenado cronológico de todos tus informes impresos o digitales.'
+    ],
+    doctorQuestions: [
+      '¿Cuál fue mi porcentaje exacto de BCR-ABL en la Escala Internacional en este control?',
+      '¿He alcanzado una Respuesta Molecular Mayor (MR3) o Profunda (MR4/MR4.5)?',
+      '¿La tendencia general comparada con los meses anteriores es favorable?',
+      '¿Cuándo me corresponde la próxima extracción de sangre?'
+    ],
+    recommendedModules: [
+      { num: '02', name: 'Diagnóstico y Exámenes', href: '#modulo-2' },
+      { num: '01', name: 'Conociendo la LMC', href: '#modulo-1' },
+      { num: '03', name: 'Tratamiento e ITK', href: '#modulo-3' }
+    ],
+    quote: '"Cuando aprendes a leer tus números, los exámenes dejan de ser un motivo de angustia y se convierten en el mapa de tu victoria."'
+  },
+  {
+    id: 'emocional',
+    iconName: 'Smile',
+    badge: 'Salud emocional',
+    title: 'Necesito apoyo emocional',
+    subtitle: 'El impacto emocional de una enfermedad crónica es real: ansiedad, miedo a la recaída o incertidumbre.',
+    priorities: [
+      'Validar tus sentimientos: es completamente normal sentir tristeza, miedo o frustración en ciertas etapas.',
+      'Buscar apoyo en psico-oncología y grupos de pacientes especializados.',
+      'Aprender a comunicar tu situación a tus seres queridos sin cargar con culpas.',
+      'Centrarse en el presente: hoy cuentas con ciencia de vanguardia que te protege.'
+    ],
+    doctorQuestions: [
+      '¿El centro de salud cuenta con servicio de apoyo psico-oncológico para pacientes con LMC?',
+      '¿Existen recomendaciones para manejar el insomnio o la ansiedad asociados al diagnóstico?',
+      '¿Puedo participar en talleres educativos o grupos de apoyo institucional?'
+    ],
+    recommendedModules: [
+      { num: '09', name: 'Salud Mental y Emociones', href: '#modulo-9' },
+      { num: '08', name: 'Vida Diaria y Bienestar', href: '#modulo-8' },
+      { num: '10', name: 'La Historia de Shirley', href: '#modulo-10' }
+    ],
+    quote: '"Cuidar tu mente y tu corazón es tan importante como tomar tu medicación. No tienes que fingir fortaleza todo el tiempo."'
+  },
+  {
+    id: 'familia',
+    iconName: 'Users',
+    badge: 'Familia y cuidadores',
+    title: 'Soy familiar o cuidador de un paciente',
+    subtitle: 'El apoyo de los seres queridos es un pilar fundamental. Aprende cómo ayudar con empatía y sin sobreproteger.',
+    priorities: [
+      'Comprender que la LMC no es contagiosa ni una sentencia de muerte: se convive con ella.',
+      'Acompañar sin sobreproteger ni anular la autonomía del paciente.',
+      'Ayudar a recordar tomas y citas médicas con respeto y discreción.',
+      'Cuidar también de tu propia salud emocional como cuidador o acompañante.'
+    ],
+    doctorQuestions: [
+      '¿Cómo podemos ayudar como familia a favorecer la adherencia al tratamiento en casa?',
+      '¿Qué signos o cambios de salud ameritan que nos comuniquemos de inmediato?',
+      '¿Qué tipo de actividad física y alimentación compartida es más beneficiosa?'
+    ],
+    recommendedModules: [
+      { num: '01', name: 'Conociendo la LMC', href: '#modulo-1' },
+      { num: '08', name: 'Vida Diaria en Familia', href: '#modulo-8' },
+      { num: '09', name: 'Salud Mental Familiar', href: '#modulo-9' }
+    ],
+    quote: '"El mejor apoyo no es el que invade, sino el que escucha con amor y camina al mismo paso."'
+  }
+];
+---
+
+<section id="ruta" class="py-24 bg-slate-50 relative overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-lime/80 text-brand-dark text-xs font-bold uppercase tracking-wider shadow-sm">
+        <Compass class="w-3.5 h-3.5" />
+        <span>Navegador Personalizado</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight">
+        "¿En qué momento de tu proceso estás?"
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+        En lugar de revisar cientos de preguntas dispersas, selecciona tu situación actual para acceder de inmediato al mapa de respuestas, prioridades y preguntas médicas para ti.
+      </p>
+    </div>
+
+    <!-- Interactive Tabs Grid with Lucide Icons -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-12" id="route-buttons-container">
+      {routes.map((route, idx) => (
+        <button
+          type="button"
+          data-route-target={route.id}
+          class={`route-tab-btn text-left p-4 rounded-2xl border transition-all duration-300 flex flex-col justify-between h-32 relative ${
+            idx === 0 
+              ? 'bg-brand-dark text-white border-brand-dark shadow-xl scale-[1.02] ring-2 ring-brand-blue ring-offset-2' 
+              : 'bg-white text-slate-700 border-slate-200 hover:border-brand-blue/50 hover:bg-slate-50 shadow-sm'
+          }`}
+        >
+          <div class="flex items-center justify-between w-full">
+            <div class={`w-8 h-8 rounded-xl flex items-center justify-center ${idx === 0 ? 'bg-brand-blue/20 text-brand-lime' : 'bg-slate-100 text-brand-blue'}`}>
+              {route.iconName === 'MapPin' && <MapPin class="w-4 h-4" />}
+              {route.iconName === 'Pill' && <Pill class="w-4 h-4" />}
+              {route.iconName === 'RefreshCw' && <RefreshCw class="w-4 h-4" />}
+              {route.iconName === 'Activity' && <Activity class="w-4 h-4" />}
+              {route.iconName === 'Baby' && <Baby class="w-4 h-4" />}
+              {route.iconName === 'FlaskConical' && <FlaskConical class="w-4 h-4" />}
+              {route.iconName === 'Smile' && <Smile class="w-4 h-4" />}
+              {route.iconName === 'Users' && <Users class="w-4 h-4" />}
+            </div>
+            <span class={`text-[10px] font-bold px-2 py-0.5 rounded-full ${idx === 0 ? 'bg-brand-lime text-brand-dark' : 'bg-slate-100 text-slate-600'}`}>
+              {route.badge}
+            </span>
+          </div>
+          <div class="font-bold text-xs sm:text-sm line-clamp-2 leading-tight">
+            {route.title}
+          </div>
+        </button>
+      ))}
+    </div>
+
+    <!-- Route Content Display Panels -->
+    <div class="relative bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200" id="route-panels-container">
+      
+      {routes.map((route, idx) => (
+        <div 
+          id={`panel-${route.id}`} 
+          class={`route-content-panel space-y-8 ${idx === 0 ? 'block' : 'hidden'}`}
+        >
+          
+          <!-- Route Top Banner -->
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100">
+            <div class="space-y-2">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-brand-blue-soft text-brand-blue flex items-center justify-center">
+                  {route.iconName === 'MapPin' && <MapPin class="w-5 h-5" />}
+                  {route.iconName === 'Pill' && <Pill class="w-5 h-5" />}
+                  {route.iconName === 'RefreshCw' && <RefreshCw class="w-5 h-5" />}
+                  {route.iconName === 'Activity' && <Activity class="w-5 h-5" />}
+                  {route.iconName === 'Baby' && <Baby class="w-5 h-5" />}
+                  {route.iconName === 'FlaskConical' && <FlaskConical class="w-5 h-5" />}
+                  {route.iconName === 'Smile' && <Smile class="w-5 h-5" />}
+                  {route.iconName === 'Users' && <Users class="w-5 h-5" />}
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-dark">
+                  {route.title}
+                </h3>
+              </div>
+              <p class="text-base text-slate-600 max-w-3xl">
+                {route.subtitle}
+              </p>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 italic text-xs text-slate-600 max-w-md font-serif">
+              {route.quote}
+            </div>
+          </div>
+
+          <!-- Priorities & Questions Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Left: Prioridades Clínicas y Personales -->
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4">
+              <div class="flex items-center gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600" />
+                <h4 class="text-base font-extrabold text-brand-dark">
+                  Tus prioridades en este momento
+                </h4>
+              </div>
+              <ul class="space-y-3">
+                {route.priorities.map((item) => (
+                  <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-blue mt-2 shrink-0"></span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Right: Preguntas para tu Hematólogo -->
+            <div class="p-6 rounded-2xl bg-brand-blue-soft/60 border border-brand-blue/30 space-y-4">
+              <div class="flex items-center gap-2">
+                <HelpCircle class="w-5 h-5 text-brand-blue" />
+                <h4 class="text-base font-extrabold text-brand-dark">
+                  Preguntas clave para tu próxima cita médica
+                </h4>
+              </div>
+              <ul class="space-y-3">
+                {route.doctorQuestions.map((q) => (
+                  <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-800 font-medium">
+                    <span class="text-brand-blue font-bold">Q:</span>
+                    <span>{q}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Recommended Modules Navigation Bar -->
+          <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
+              <BookOpen class="w-4 h-4 text-brand-dark" />
+              <span>Módulos recomendados para tu etapa:</span>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-3">
+              {route.recommendedModules.map((mod) => (
+                <a
+                  href={mod.href}
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-brand-dark hover:text-white text-slate-800 text-xs font-bold transition-colors"
+                >
+                  <span class="text-brand-blue">Módulo {mod.num}</span>
+                  <span>{mod.name}</span>
+                  <ArrowRight class="w-3 h-3" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.route-tab-btn');
+    const panels = document.querySelectorAll('.route-content-panel');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-route-target');
+
+        tabButtons.forEach(btn => {
+          btn.classList.remove('bg-brand-dark', 'text-white', 'border-brand-dark', 'shadow-xl', 'scale-[1.02]', 'ring-2', 'ring-brand-blue', 'ring-offset-2');
+          btn.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
+          const badge = btn.querySelector('span:last-child');
+          if (badge) {
+            badge.classList.remove('bg-brand-lime', 'text-brand-dark');
+            badge.classList.add('bg-slate-100', 'text-slate-600');
+          }
+        });
+
+        button.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
+        button.classList.add('bg-brand-dark', 'text-white', 'border-brand-dark', 'shadow-xl', 'scale-[1.02]', 'ring-2', 'ring-brand-blue', 'ring-offset-2');
+        const activeBadge = button.querySelector('span:last-child');
+        if (activeBadge) {
+          activeBadge.classList.remove('bg-slate-100', 'text-slate-600');
+          activeBadge.classList.add('bg-brand-lime', 'text-brand-dark');
+        }
+
+        panels.forEach(panel => {
+          panel.classList.add('hidden');
+        });
+
+        const targetPanel = document.getElementById(`panel-${targetId}`);
+        if (targetPanel) {
+          targetPanel.classList.remove('hidden');
+          // @ts-ignore
+          if (typeof gsap !== 'undefined') {
+            // @ts-ignore
+            gsap.fromTo(targetPanel, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35 });
+          }
+        }
+      });
+    });
+  });
+</script>

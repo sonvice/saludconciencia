@@ -1,0 +1,177 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+import { ArrowLeft, Clock, Calendar, ShieldCheck, Share2, Heart, ArrowRight } from 'lucide-astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+// Related posts from same category or others
+const allPosts = await getCollection('blog');
+const relatedPosts = allPosts
+  .filter(p => p.id !== post.id)
+  .slice(0, 2);
+---
+
+<Layout 
+  title={`${post.data.title} | SaludConCiencia`}
+  description={post.data.description}
+  image={post.data.image}
+  type="article"
+>
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-bar" class="fixed top-0 left-0 h-1.5 bg-brand-blue z-50 w-0 transition-all duration-100"></div>
+
+  <article class="py-12 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <!-- Back Navigation & Meta -->
+      <div class="space-y-6">
+        <a 
+          href="/blog" 
+          class="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-brand-dark transition-colors"
+        >
+          <ArrowLeft class="w-4 h-4" />
+          <span>Volver a la biblioteca de artículos</span>
+        </a>
+
+        <!-- Category & Time -->
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-blue-soft text-brand-blue-600 border border-brand-blue/30">
+            {post.data.category}
+          </span>
+          <span class="text-xs text-slate-400">·</span>
+          <span class="text-xs text-slate-500 flex items-center gap-1">
+            <Calendar class="w-3.5 h-3.5" />
+            {new Date(post.data.pubDate).toLocaleDateString('es-ES', { month: 'long', day: 'numeric', year: 'numeric' })}
+          </span>
+          <span class="text-xs text-slate-400">·</span>
+          <span class="text-xs text-slate-500 flex items-center gap-1">
+            <Clock class="w-3.5 h-3.5" />
+            {post.data.readingTime}
+          </span>
+        </div>
+
+        <!-- Article Headline -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight">
+          {post.data.title}
+        </h1>
+
+        <p class="text-lg text-slate-600 leading-relaxed font-serif italic border-l-4 border-brand-lime pl-4 py-1">
+          {post.data.description}
+        </p>
+
+        <!-- Author Card Mini -->
+        <div class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+          <div class="flex items-center gap-3.5">
+            <img 
+              src={post.data.authorAvatar} 
+              alt={post.data.author} 
+              class="w-12 h-12 rounded-full object-cover border-2 border-brand-lime shadow-sm"
+            />
+            <div>
+              <h3 class="text-sm font-extrabold text-brand-dark">{post.data.author}</h3>
+              <p class="text-xs text-slate-500">{post.data.authorRole}</p>
+            </div>
+          </div>
+          
+          <button 
+            type="button" 
+            onclick="navigator.clipboard.writeText(window.location.href); alert('Enlace copiado al portapapeles');"
+            title="Compartir artículo"
+            class="p-2.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-600 transition-colors flex items-center gap-1.5 text-xs font-semibold"
+          >
+            <Share2 class="w-4 h-4 text-brand-blue" />
+            <span class="hidden sm:inline">Compartir</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Featured Image -->
+      <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 max-h-[480px]">
+        <img 
+          src={post.data.image} 
+          alt={post.data.imageAlt} 
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Main Article Prose Content -->
+      <div class="prose prose-slate prose-lg max-w-none prose-headings:text-brand-dark prose-headings:font-extrabold prose-p:leading-relaxed prose-a:text-brand-blue hover:prose-a:underline prose-strong:text-brand-dark">
+        <Content />
+      </div>
+
+      <!-- Tags & Share Footer -->
+      <div class="pt-8 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-xs font-bold text-slate-400">Temas:</span>
+          {post.data.tags.map(tag => (
+            <span class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">
+              #{tag}
+            </span>
+          ))}
+        </div>
+
+        <a 
+          href="/#ruta" 
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-dark text-white text-xs font-bold hover:bg-black transition-colors"
+        >
+          <span>¿En qué momento estás? Explorar ruta</span>
+          <ArrowRight class="w-3.5 h-3.5 text-brand-lime" />
+        </a>
+      </div>
+
+      <!-- Medical Disclaimer Box inside post -->
+      <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200 space-y-2">
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-700">
+          <ShieldCheck class="w-4 h-4 text-brand-blue" />
+          <span>Nota de divulgación responsable</span>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          La información aquí presentada tiene propósitos exclusivamente divulgativos y educativos. Cada organismo responde de forma única y cualquier decisión médica debe ser tomada en acuerdo con tu equipo hematológico de cabecera.
+        </p>
+      </div>
+
+      <!-- Related Posts Section -->
+      {relatedPosts.length > 0 && (
+        <div class="pt-12 border-t border-slate-200 space-y-6">
+          <h3 class="text-2xl font-extrabold text-brand-dark">Artículos relacionados que pueden interesarte</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {relatedPosts.map(rp => (
+              <a 
+                href={`/blog/${rp.id}/`} 
+                class="p-6 rounded-2xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-brand-blue/40 shadow-sm hover:shadow-lg transition-all duration-300 block space-y-2 group"
+              >
+                <span class="text-[11px] font-bold text-brand-blue uppercase">{rp.data.category}</span>
+                <h4 class="text-base font-extrabold text-brand-dark group-hover:text-brand-blue transition-colors line-clamp-2">
+                  {rp.data.title}
+                </h4>
+                <p class="text-xs text-slate-600 line-clamp-2">{rp.data.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+    </div>
+  </article>
+</Layout>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const bar = document.getElementById('reading-progress-bar');
+    if (!bar) return;
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / totalHeight) * 100;
+    bar.style.width = `${progress}%`;
+  });
+</script>
