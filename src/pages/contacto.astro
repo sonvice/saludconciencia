@@ -1,27 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import UnifiedContactForm from '../components/UnifiedContactForm.astro';
-import { MessageCircle, ShieldAlert, Calendar, Mail, BookMarked, HelpCircle, HeartHandshake, CheckCircle2 } from 'lucide-astro';
+import { MessageCircle, ShieldAlert, Calendar, BookMarked, HelpCircle, Heart, Sparkles, Send, ArrowRight, ShieldCheck, CheckCircle2, Clock } from 'lucide-astro';
+
+const phoneNumber = "34613491695";
 ---
 
 <Layout 
-  title="Contacto, Sesiones y Lista del Libro | SaludConCiencia"
-  description="Canal unificado de comunicación con Shirley Gaviria: solicita sesiones de orientación 1 a 1, únete a la lista de espera del libro o envía tus consultas sobre LMC."
+  title="Contacto Directo por WhatsApp | SaludConCiencia"
+  description="Comunícate directamente con Shirley Gaviria por WhatsApp para solicitar sesiones 1 a 1, unirte a la lista de espera del libro o resolver tus dudas sobre LMC."
 >
   <div class="py-16 bg-slate-50 border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Contact Header (Heuristic #8: Aesthetic & Minimalist Design) -->
+      <!-- Minimalist Header -->
       <div class="max-w-3xl space-y-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blue-soft text-brand-blue-600 text-xs font-bold uppercase tracking-wider">
-          <MessageCircle class="w-3.5 h-3.5 text-brand-blue" />
-          <span>Canal Único de Comunicación</span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wider border border-emerald-200">
+          <MessageCircle class="w-3.5 h-3.5 text-emerald-600" />
+          <span>Atención Directa por WhatsApp</span>
         </div>
         <h1 class="text-4xl sm:text-5xl font-extrabold text-brand-dark tracking-tight">
-          Estamos aquí para escucharte y acompañarte
+          Hablemos directamente, sin formularios
         </h1>
         <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-serif">
-          Un punto de encuentro unificado para solicitar <strong>sesiones privadas 1 a 1</strong>, anotarte en la <strong>lista de espera del libro</strong> o enviar tus consultas sobre la leucemia mieloide crónica.
+          Elige qué necesitas y te abriremos una conversación directa con <strong>Shirley Gaviria</strong> en WhatsApp con el mensaje ya preparado para ti.
         </p>
       </div>
 
@@ -31,96 +32,187 @@ import { MessageCircle, ShieldAlert, Calendar, Mail, BookMarked, HelpCircle, Hea
   <div class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Critical Medical Disclaimer Banner (Heuristic #5: Error Prevention) -->
+      <!-- Medical Disclaimer Banner (Heuristic #5: Error Prevention) -->
       <div class="mb-12 p-6 rounded-3xl bg-amber-50 border-2 border-amber-200 shadow-sm flex flex-col md:flex-row items-start md:items-center gap-5">
         <div class="w-12 h-12 rounded-2xl bg-amber-200 text-amber-900 flex items-center justify-center shrink-0">
           <ShieldAlert class="w-6 h-6 text-amber-900" />
         </div>
         <div class="space-y-1">
           <h3 class="text-sm font-bold text-amber-950 uppercase tracking-wide">
-            Aviso importante sobre urgencias y consultas médicas individuales
+            Aviso de Responsabilidad Ética
           </h3>
           <p class="text-xs text-amber-900 leading-relaxed">
-            Este formulario es para <strong>orientación práctica, divulgación científica, lista del libro y apoyo</strong>. Shirley Gaviria no realiza diagnósticos individuales ni modifica prescripciones médicas. Ante cualquier síntoma agudo o urgencia médica, <strong>contacta de inmediato a tu hematólogo o acude a urgencias hospitalarias.</strong>
+            Este canal es exclusivamente de <strong>acompañamiento, orientación práctica, lista del libro y apoyo de paciente a paciente</strong>. Shirley Gaviria no realiza diagnósticos individuales ni modifica dosis farmacológicas. Ante cualquier síntoma agudo o emergencia, consulta a tu médico hematólogo o acude a urgencias.
           </p>
         </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
         
-        <!-- Left: The Unified Form (7 cols) -->
-        <div class="lg:col-span-7">
-          <UnifiedContactForm />
+        <!-- Left: Interactive WhatsApp Option Selector (7 cols) -->
+        <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+          
+          <div class="space-y-2">
+            <h2 class="text-2xl font-extrabold text-brand-dark">¿Cómo te gustaría comunicarte?</h2>
+            <p class="text-xs text-slate-600">
+              Selecciona una opción para generar tu mensaje personalizado en WhatsApp:
+            </p>
+          </div>
+
+          <!-- Interactive Option Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="wa-option-cards">
+            
+            <!-- Option 1: Sesión 1 a 1 -->
+            <button 
+              type="button" 
+              data-wa-type="sesion" 
+              data-wa-msg="Hola Shirley, me comunico desde la web SaludConCiencia porque me gustaría agendar una Sesión de Orientación 1 a 1 (45 min) contigo para resolver dudas cotidianas sobre la LMC."
+              class="wa-choice-btn p-4 rounded-2xl border text-left transition-all duration-200 bg-brand-dark text-white border-brand-dark shadow-sm group"
+            >
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-xl bg-neutral-800 flex items-center justify-center text-brand-lime">
+                  <Calendar class="w-4 h-4" />
+                </div>
+                <span class="font-bold text-sm">Sesión 1 a 1</span>
+              </div>
+              <p class="text-xs text-neutral-300 leading-relaxed">
+                Orientación personalizada por videollamada (45 min).
+              </p>
+            </button>
+
+            <!-- Option 2: Lista del Libro -->
+            <button 
+              type="button" 
+              data-wa-type="libro" 
+              data-wa-msg="Hola Shirley, te escribo para unirme a la lista de espera de tu próximo libro sobre LMC y poder recibir el primer capítulo de muestra gratuito."
+              class="wa-choice-btn p-4 rounded-2xl border text-left transition-all duration-200 bg-white text-slate-700 border-slate-200 hover:border-slate-300 group"
+            >
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600">
+                  <BookMarked class="w-4 h-4" />
+                </div>
+                <span class="font-bold text-sm text-slate-900">Lista del Libro</span>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Anotarte para novedades y capítulo 1 de regalo.
+              </p>
+            </button>
+
+            <!-- Option 3: Consulta General -->
+            <button 
+              type="button" 
+              data-wa-type="consulta" 
+              data-wa-msg="Hola Shirley, tengo una consulta sobre la leucemia mieloide crónica y me gustaría saber tu opinión de paciente y bacterióloga."
+              class="wa-choice-btn p-4 rounded-2xl border text-left transition-all duration-200 bg-white text-slate-700 border-slate-200 hover:border-slate-300 group"
+            >
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600">
+                  <HelpCircle class="w-4 h-4" />
+                </div>
+                <span class="font-bold text-sm text-slate-900">Consulta General</span>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Preguntas cotidianas, biblioteca o exámenes.
+              </p>
+            </button>
+
+            <!-- Option 4: Apoyo Solidario -->
+            <button 
+              type="button" 
+              data-wa-type="apoyo" 
+              data-wa-msg="Hola Shirley, me gustaría apoyar de manera solidaria la plataforma SaludConCiencia para que siga siendo gratuita."
+              class="wa-choice-btn p-4 rounded-2xl border text-left transition-all duration-200 bg-white text-slate-700 border-slate-200 hover:border-slate-300 group"
+            >
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600">
+                  <Heart class="w-4 h-4" />
+                </div>
+                <span class="font-bold text-sm text-slate-900">Apoyo Solidario</span>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Micro-contribución o patrocinio al proyecto.
+              </p>
+            </button>
+
+          </div>
+
+          <!-- Preview & Action Box -->
+          <div class="p-5 rounded-2xl bg-white border border-slate-200 space-y-4">
+            <div class="space-y-1">
+              <label class="text-xs font-bold text-slate-700 block">Mensaje predeterminado que se abrirá en tu WhatsApp:</label>
+              <div id="wa-preview-text" class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 font-mono leading-relaxed">
+                Hola Shirley, me comunico desde la web SaludConCiencia porque me gustaría agendar una Sesión de Orientación 1 a 1 (45 min) contigo para resolver dudas cotidianas sobre la LMC.
+              </div>
+            </div>
+
+            <!-- Launch Button -->
+            <a 
+              id="wa-launch-button"
+              href="https://wa.me/34613491695?text=Hola%20Shirley%2C%20me%20comunico%20desde%20la%20web%20SaludConCiencia%20porque%20me%20gustar%C3%ADa%20agendar%20una%20Sesi%C3%B3n%20de%20Orientaci%C3%B3n%201%20a%201%20(45%20min)%20contigo%20para%20resolver%20dudas%20cotidianas%20sobre%20la%20LMC."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-lg hover:shadow-glow-blue transition-all duration-300 flex items-center justify-center gap-3 text-center"
+            >
+              <MessageCircle class="w-5 h-5 fill-white" />
+              <span>Abrir Chat en WhatsApp (+34 613491695)</span>
+            </a>
+          </div>
+
+          <div class="flex items-center gap-2 text-xs text-slate-500">
+            <ShieldCheck class="w-4 h-4 text-emerald-600" />
+            <span>Chat 100% privado y directo con Shirley Gaviria</span>
+          </div>
+
         </div>
 
         <!-- Right: Information & FAQ (5 cols) -->
-        <div class="lg:col-span-5 space-y-8">
+        <div class="lg:col-span-5 space-y-6">
           
-          <!-- Direct Services Card -->
           <div class="p-8 rounded-3xl bg-slate-900 text-white space-y-6 border border-neutral-800 shadow-xl">
             <div class="space-y-2">
-              <span class="text-xs font-bold text-brand-lime uppercase tracking-wider">Acompañamiento Personalizado</span>
-              <h3 class="text-xl font-extrabold text-white">Canales & Servicios</h3>
+              <span class="text-xs font-bold text-brand-lime uppercase tracking-wider">Atención Humana</span>
+              <h3 class="text-xl font-extrabold text-white">Canal Directo WhatsApp</h3>
               <p class="text-xs text-neutral-300 leading-relaxed">
-                Espacios 1 a 1 de orientación práctica, resolución de dudas del día a día y apoyo emocional.
+                Sin tiempos de espera ni intermediarios. Escríbenos directamente desde tu móvil o WhatsApp Web.
               </p>
             </div>
 
             <div class="space-y-4 text-sm">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-neutral-800 text-slate-300 flex items-center justify-center shrink-0">
-                  <Calendar class="w-5 h-5 text-slate-300" />
+                <div class="w-10 h-10 rounded-xl bg-neutral-800 text-emerald-400 flex items-center justify-center shrink-0">
+                  <MessageCircle class="w-5 h-5" />
                 </div>
                 <div>
-                  <div class="text-xs text-neutral-400">Sesiones privadas 1 a 1</div>
-                  <div class="font-bold text-white">45 min por Zoom / Meet</div>
+                  <div class="text-xs text-neutral-400">Número directo</div>
+                  <div class="font-bold text-white">+34 613491695</div>
                 </div>
               </div>
 
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-xl bg-neutral-800 text-slate-300 flex items-center justify-center shrink-0">
-                  <Mail class="w-5 h-5 text-slate-300" />
+                  <Clock class="w-5 h-5" />
                 </div>
                 <div>
-                  <div class="text-xs text-neutral-400">Correo directo</div>
-                  <div class="font-bold text-white">contacto@saludconciencia.org</div>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-neutral-800 text-slate-300 flex items-center justify-center shrink-0">
-                  <BookMarked class="w-5 h-5 text-slate-300" />
-                </div>
-                <div>
-                  <div class="text-xs text-neutral-400">Próximo libro</div>
-                  <div class="font-bold text-white">Lista de espera activa</div>
+                  <div class="text-xs text-neutral-400">Tiempo de respuesta habitual</div>
+                  <div class="font-bold text-white">Menos de 24 horas</div>
                 </div>
               </div>
             </div>
 
             <div class="pt-4 border-t border-neutral-800 text-xs text-neutral-400 italic font-serif">
-              "El acompañamiento de quien ya ha recorrido este camino disminuye el miedo y enciende la esperanza."
+              "Detrás de un diagnóstico también existe una vida llena de esperanza."
             </div>
           </div>
 
-          <!-- Quick FAQ (Krug: Self-evident questions) -->
-          <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200 space-y-4">
-            <h4 class="text-sm font-extrabold text-brand-dark flex items-center gap-2">
+          <!-- FAQ Card -->
+          <div class="p-6 rounded-3xl bg-slate-50 border border-slate-200 space-y-3">
+            <h4 class="text-sm font-bold text-brand-dark flex items-center gap-2">
               <HelpCircle class="w-4 h-4 text-brand-blue" />
-              <span>Preguntas Frecuentes</span>
+              <span>¿Cómo funciona?</span>
             </h4>
-
-            <div class="space-y-3 text-xs text-slate-700">
-              <div class="space-y-1">
-                <div class="font-bold text-slate-900">¿Cómo sé si mi mensaje fue recibido?</div>
-                <p class="text-slate-600">Al presionar enviar, recibirás confirmación visual inmediata y un correo de confirmación de parte de Shirley.</p>
-              </div>
-
-              <div class="space-y-1">
-                <div class="font-bold text-slate-900">¿Puedo pedir una sesión para un familiar?</div>
-                <p class="text-slate-600">Por supuesto. Muchos familiares y cuidadores asisten a las sesiones para aprender a acompañar mejor a sus seres queridos.</p>
-              </div>
-            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Al hacer clic en el botón verde, se abrirá WhatsApp con el mensaje ya escrito. Solo tendrás que darle a <strong>Enviar</strong> y Shirley te responderá con la calidez y dedicación de siempre.
+            </p>
           </div>
 
         </div>
@@ -130,3 +222,60 @@ import { MessageCircle, ShieldAlert, Calendar, Mail, BookMarked, HelpCircle, Hea
     </div>
   </div>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.wa-choice-btn');
+    const preview = document.getElementById('wa-preview-text');
+    const launchBtn = document.getElementById('wa-launch-button') as HTMLAnchorElement;
+    const phone = "34613491695";
+
+    // URL parameter check
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramIntent = urlParams.get('intencion') || urlParams.get('asunto') || '';
+
+    function selectOption(targetBtn: HTMLElement) {
+      buttons.forEach(b => {
+        b.classList.remove('bg-brand-dark', 'text-white', 'border-brand-dark', 'shadow-sm');
+        b.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
+        const iconContainer = b.querySelector('div.w-8');
+        if (iconContainer) {
+          iconContainer.className = 'w-8 h-8 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600';
+        }
+        const title = b.querySelector('span');
+        if (title) title.className = 'font-bold text-sm text-slate-900';
+        const desc = b.querySelector('p');
+        if (desc) desc.className = 'text-xs text-slate-600 leading-relaxed';
+      });
+
+      targetBtn.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
+      targetBtn.classList.add('bg-brand-dark', 'text-white', 'border-brand-dark', 'shadow-sm');
+      const iconContainer = targetBtn.querySelector('div.w-8');
+      if (iconContainer) {
+        iconContainer.className = 'w-8 h-8 rounded-xl bg-neutral-800 flex items-center justify-center text-brand-lime';
+      }
+      const title = targetBtn.querySelector('span');
+      if (title) title.className = 'font-bold text-sm text-white';
+      const desc = targetBtn.querySelector('p');
+      if (desc) desc.className = 'text-xs text-neutral-300 leading-relaxed';
+
+      const msg = targetBtn.getAttribute('data-wa-msg') || '';
+      if (preview) preview.textContent = msg;
+      if (launchBtn) {
+        launchBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+      }
+    }
+
+    // Check if initial param matches
+    if (paramIntent) {
+      const match = Array.from(buttons).find(b => b.getAttribute('data-wa-type') === paramIntent);
+      if (match) selectOption(match as HTMLElement);
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectOption(btn as HTMLElement);
+      });
+    });
+  });
+</script>

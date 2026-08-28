@@ -1,5 +1,7 @@
 ---
-import { Heart, Sparkles, Send, CheckCircle2 } from 'lucide-astro';
+import { Heart, Sparkles, MessageCircle, CheckCircle2, ArrowRight } from 'lucide-astro';
+
+const communityWhatsAppUrl = "https://wa.me/34613491695?text=" + encodeURIComponent("Hola Shirley, me gustaría unirme a la comunidad de SaludConCiencia y recibir información sobre LMC.");
 ---
 
 <section class="py-24 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
@@ -27,27 +29,22 @@ import { Heart, Sparkles, Send, CheckCircle2 } from 'lucide-astro';
           Ojalá que, cuando termines de recorrer esta biblioteca, tengas muchas menos dudas que cuando llegaste. Y, sobre todo, que descubras que detrás de un diagnóstico hay una vida inmensa llena de proyectos y esperanza.
         </p>
 
-        <!-- Newsletter Signup for Future Book & App Releases -->
-        <div class="pt-4 max-w-xl mx-auto">
-          <form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); alert('¡Gracias por unirte a la comunidad de SaludConCiencia! Recibirás nuestras guías y novedades.');">
-            <input 
-              type="email" 
-              required
-              placeholder="Ingresa tu correo electrónico..." 
-              class="flex-grow px-5 py-3.5 rounded-2xl bg-neutral-900/90 border border-neutral-700 text-white placeholder:text-neutral-500 text-sm focus:outline-none focus:ring-2 focus:ring-brand-lime transition-all"
-            />
-            <button 
-              type="submit" 
-              class="px-7 py-3.5 rounded-2xl bg-brand-lime hover:bg-white text-brand-dark font-extrabold text-sm transition-all duration-300 shadow-glow-lime flex items-center justify-center gap-2 shrink-0"
-            >
-              <span>Unirme a la Comunidad</span>
-              <Send class="w-4 h-4" />
-            </button>
-          </form>
-          <div class="flex items-center justify-center gap-4 text-[11px] text-neutral-400 mt-3">
-            <span class="flex items-center gap-1"><CheckCircle2 class="w-3.5 h-3.5 text-brand-lime" /> Sin spam</span>
+        <!-- Direct WhatsApp Community Action (No forms needed) -->
+        <div class="pt-4 max-w-xl mx-auto flex flex-col items-center gap-4">
+          <a 
+            href={communityWhatsAppUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm transition-all duration-300 shadow-lg hover:shadow-glow-blue flex items-center justify-center gap-3 group"
+          >
+            <MessageCircle class="w-5 h-5 fill-white" />
+            <span>Unirme a la Comunidad por WhatsApp (+34 613491695)</span>
+          </a>
+
+          <div class="flex items-center justify-center gap-4 text-xs text-neutral-400">
+            <span class="flex items-center gap-1"><CheckCircle2 class="w-3.5 h-3.5 text-brand-lime" /> Contacto directo</span>
             <span>·</span>
-            <span>Acceso a nuevas guías y módulos</span>
+            <span>Acceso a nuevas guías y novedades</span>
             <span>·</span>
             <span>100% gratuito</span>
           </div>

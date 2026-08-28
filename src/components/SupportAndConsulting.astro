@@ -1,5 +1,8 @@
 ---
 import { HeartHandshake, Coffee, MessageCircle, Calendar, CheckCircle2, ShieldCheck, ArrowRight, Sparkles, Heart } from 'lucide-astro';
+
+const sessionWhatsAppUrl = "https://wa.me/34613491695?text=" + encodeURIComponent("Hola Shirley, me gustaría solicitar una Sesión de Orientación 1 a 1 (45 min) contigo para resolver dudas prácticas y organizar mis consultas médicas.");
+const supportWhatsAppUrl = "https://wa.me/34613491695?text=" + encodeURIComponent("Hola Shirley, me gustaría apoyar de manera solidaria la plataforma SaludConCiencia.");
 ---
 
 <section id="orientacion" class="py-24 bg-slate-50 relative overflow-hidden">
@@ -29,7 +32,7 @@ import { HeartHandshake, Coffee, MessageCircle, Calendar, CheckCircle2, ShieldCh
         <div class="space-y-6">
           <div class="flex items-start justify-between">
             <div class="w-12 h-12 rounded-2xl bg-brand-blue-soft text-brand-blue flex items-center justify-center">
-              <Calendar class="w-6 h-6" />
+              <Calendar class="w-6 h-6 text-brand-blue" />
             </div>
             <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-brand-blue-soft text-brand-blue-700 border border-brand-blue/30">
               Sesión Privada · 45 Minutos
@@ -76,25 +79,27 @@ import { HeartHandshake, Coffee, MessageCircle, Calendar, CheckCircle2, ShieldCh
             <div class="text-xl font-extrabold text-brand-dark">Aporte voluntario / Tarifa accesible</div>
           </div>
           <a 
-            href="/contacto?asunto=solicitud-sesion-1-a-1" 
-            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-brand-dark hover:bg-black text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-glow-blue transition-all"
+            href={sessionWhatsAppUrl} 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md transition-all"
           >
-            <MessageCircle class="w-4 h-4 text-brand-lime" />
-            <span>Solicitar Sesión 1 a 1</span>
+            <MessageCircle class="w-4 h-4 fill-white" />
+            <span>Solicitar por WhatsApp</span>
           </a>
         </div>
 
       </div>
 
       <!-- Option 2: Apoyo Solidario al Proyecto ("Café Solidario") -->
-      <div class="rounded-3xl bg-white p-8 sm:p-10 border border-slate-200 shadow-sm relative flex flex-col justify-between space-y-8 hover:shadow-xl hover:border-amber-300 transition-all duration-300">
+      <div class="rounded-3xl bg-white p-8 sm:p-10 border border-slate-200 shadow-sm relative flex flex-col justify-between space-y-8 hover:shadow-xl hover:border-slate-300 transition-all duration-300">
         
         <div class="space-y-6">
           <div class="flex items-start justify-between">
-            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center">
-              <Coffee class="w-6 h-6" />
+            <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-700 flex items-center justify-center">
+              <Coffee class="w-6 h-6 text-slate-700" />
             </div>
-            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-amber-100 text-amber-800">
+            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-slate-100 text-slate-800">
               Sostenibilidad Comunitaria
             </span>
           </div>
@@ -114,15 +119,15 @@ import { HeartHandshake, Coffee, MessageCircle, Calendar, CheckCircle2, ShieldCh
             </div>
             <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
               <li class="flex items-start gap-2.5">
-                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>Mantenimiento de servidores, dominio e infraestructura web.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>Creación continua de nuevas guías descargables en PDF para pacientes.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>Becas de orientación gratuita para personas en situación de vulnerabilidad.</span>
               </li>
             </ul>
@@ -135,11 +140,13 @@ import { HeartHandshake, Coffee, MessageCircle, Calendar, CheckCircle2, ShieldCh
             <div class="text-sm font-extrabold text-slate-700">Desde $5 USD en adelante</div>
           </div>
           <a 
-            href="/contacto?asunto=apoyo-solidario" 
-            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs sm:text-sm shadow-md transition-colors"
+            href={supportWhatsAppUrl} 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-brand-dark hover:bg-black text-white font-bold text-xs sm:text-sm shadow-md transition-colors"
           >
-            <Heart class="w-4 h-4 fill-white" />
-            <span>Hacer un Aporte Solidario</span>
+            <MessageCircle class="w-4 h-4 text-brand-lime" />
+            <span>Hablar por WhatsApp</span>
           </a>
         </div>
 
@@ -155,14 +162,14 @@ import { HeartHandshake, Coffee, MessageCircle, Calendar, CheckCircle2, ShieldCh
           <span>¿Prefieres comunicarte de inmediato con Shirley?</span>
         </h4>
         <p class="text-xs sm:text-sm text-neutral-400">
-          Escríbenos a través del formulario oficial o coordina directamente tus consultas de divulgación.
+          Chatea en directo por WhatsApp (+34 613491695) para resolver cualquier inquietud de paciente a paciente.
         </p>
       </div>
       <a 
         href="/contacto" 
         class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-brand-lime text-brand-dark font-extrabold text-xs hover:bg-white transition-colors shrink-0 shadow-glow-lime"
       >
-        <span>Ir al Formulario de Contacto</span>
+        <span>Ver Opciones de Contacto</span>
         <ArrowRight class="w-4 h-4" />
       </a>
     </div>
