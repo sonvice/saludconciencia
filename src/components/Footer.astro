@@ -1,5 +1,6 @@
 ---
 import { Heart, ShieldCheck, Mail, ArrowUpRight, BookOpen, ExternalLink, MapPin, Pill, FlaskConical, Users, BookMarked, HeartHandshake, Home, Newspaper, MessageCircle } from 'lucide-astro';
+import SocialLinks from './SocialLinks.astro';
 ---
 
 <footer class="bg-brand-dark text-white relative overflow-hidden pt-20 pb-12 border-t border-neutral-800">
@@ -45,7 +46,13 @@ import { Heart, ShieldCheck, Mail, ArrowUpRight, BookOpen, ExternalLink, MapPin,
           Un espacio creado por <strong>Shirley Gaviria</strong> (Bacterióloga, Especialista en Gerencia en Salud y paciente de LMC desde hace más de 22 años) para transformar la incertidumbre en conocimiento, autonomía y esperanza.
         </p>
 
-        <div class="flex items-center gap-2 text-xs text-brand-lime font-semibold">
+        <!-- Social Media Dynamic Links -->
+        <div class="space-y-2 pt-1">
+          <div class="text-[11px] font-bold uppercase tracking-wider text-neutral-400">Síguenos en redes:</div>
+          <SocialLinks />
+        </div>
+
+        <div class="flex items-center gap-2 text-xs text-brand-lime font-semibold pt-2">
           <span class="w-2 h-2 rounded-full bg-brand-lime animate-pulse"></span>
           <span>"Detrás de un diagnóstico también existe una vida llena de esperanza."</span>
         </div>
@@ -127,15 +134,15 @@ import { Heart, ShieldCheck, Mail, ArrowUpRight, BookOpen, ExternalLink, MapPin,
 
       <!-- Contact Column (Completely clean of CMS text) -->
       <div class="space-y-4">
-        <h5 class="text-xs font-bold text-white uppercase tracking-widest text-neutral-300">Contacto & Sesiones</h5>
+        <h5 class="text-xs font-bold text-white uppercase tracking-widest text-neutral-300">Contacto Directo</h5>
         <div class="space-y-3 text-sm">
-          <a href="/contacto" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white font-medium text-xs transition-colors border border-neutral-700 w-full justify-center">
-            <Mail class="w-4 h-4 text-brand-blue" />
-            <span>Enviar Mensaje / Solicitar Sesión</span>
+          <a href="https://wa.me/34613491695" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors w-full justify-center shadow-md">
+            <MessageCircle class="w-4 h-4 fill-white" />
+            <span>WhatsApp (+34 613491695)</span>
           </a>
           <div class="p-3 rounded-xl bg-neutral-900 border border-neutral-800 text-[11px] text-neutral-400 space-y-1">
-            <div class="text-white font-bold">Respuesta directa</div>
-            <p>Atención personalizada y respetuosa para pacientes y familiares.</p>
+            <div class="text-white font-bold">Atención personalizada</div>
+            <p>Acompañamiento cálido y respetuoso de paciente a paciente.</p>
           </div>
         </div>
         <p class="text-[11px] text-neutral-500">

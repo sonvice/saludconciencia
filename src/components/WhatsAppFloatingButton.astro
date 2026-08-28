@@ -12,8 +12,8 @@ const {
 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
 ---
 
-<!-- Floating WhatsApp Action Button (NN/g Heuristic #7: Efficiency & Direct Accessibility) -->
-<aside class="fixed bottom-6 right-6 z-40 flex items-center group" aria-label="Contacto directo por WhatsApp">
+<!-- Floating WhatsApp Action Button (Top z-index to avoid overlay conflicts) -->
+<aside class="fixed bottom-6 right-6 z-[99999] flex items-center group pointer-events-auto" aria-label="Contacto directo por WhatsApp">
   
   <!-- Subtle Tooltip Label on Hover -->
   <div class="hidden sm:flex items-center mr-3 px-3.5 py-2 rounded-2xl bg-brand-dark/95 text-white text-xs font-semibold shadow-xl border border-neutral-700 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none transform translate-x-2 group-hover:translate-x-0">

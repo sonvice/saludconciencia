@@ -91,3 +91,19 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-brand-blue);
 }
+
+/* Netlify Drawer and Badge Suppression */
+[data-netlify-deploy-id],
+iframe#netlify-drawer,
+.netlify-drawer,
+#netlify-badge,
+[class*="netlify-drawer"],
+[id*="netlify-drawer"],
+[class*="NetlifyBadge"],
+div[data-netlify],
+.netlify-feedback-button {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
