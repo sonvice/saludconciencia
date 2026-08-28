@@ -1,5 +1,5 @@
 ---
-title: Cómo leer e interpretar tus exámenes moleculares (PCR, BCR-ABL y Cariotipo) sin miedos
+title: Cómo leer e interpretar tus exámenes moleculares (PCR, BCR-ABL y Cariotipo) sin miedo
 description: Aprende el lenguaje de tus análisis de laboratorio explicado por una bacterióloga y paciente. Qué significa MR3, MR4, IS y la carga molecular.
 pubDate: 2026-08-04
 author: Shirley Gaviria
