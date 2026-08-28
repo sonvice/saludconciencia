@@ -1,23 +1,28 @@
 ---
-title: "Cómo leer e interpretar tus exámenes moleculares (PCR, BCR-ABL y Cariotipo) sin miedo"
-description: "Aprende el lenguaje de tus análisis de laboratorio explicado por una bacterióloga y paciente. Qué significa MR3, MR4, IS y la carga molecular."
+title: Cómo leer e interpretar tus exámenes moleculares (PCR, BCR-ABL y Cariotipo) sin miedo
+description: Aprende el lenguaje de tus análisis de laboratorio explicado por una bacterióloga y paciente. Qué significa MR3, MR4, IS y la carga molecular.
 pubDate: 2026-08-04
-author: "Shirley Gaviria"
-authorRole: "Bacterióloga & Paciente de LMC (+22 años)"
-authorAvatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80"
-category: "Diagnóstico"
-image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
-imageAlt: "Tubo de ensayo y análisis de laboratorio con microscopio"
-tags: ["PCR", "Laboratorio", "Carga Molecular", "Bacteriología", "Exámenes"]
+author: Shirley Gaviria
+authorRole: Bacterióloga & Paciente de LMC (+22 años)
+authorAvatar: https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80
+category: Diagnóstico
+image: /images/pexels-ivan-s-9628831.jpg
+imageAlt: Tubo de ensayo y análisis de laboratorio con microscopio
+tags:
+  - PCR
+  - Laboratorio
+  - Carga Molecular
+  - Bacteriología
+  - Exámenes
 featured: false
-readingTime: "8 min de lectura"
+readingTime: 8 min de lectura
 ---
 
 Como bacterióloga, paso mis días entre tubos, reactivos y microscopios; como paciente, sé la angustia que produce esperar el informe de la PCR cada tres meses. Cuando no entendemos los números en el papel, la mente tiende a imaginar los peores escenarios.
 
 Por eso, quiero enseñarte a descifrar tus exámenes con sencillez.
 
----
+***
 
 ### La pirámide de las respuestas terapéuticas
 
@@ -34,4 +39,5 @@ Para monitorear el tratamiento de la LMC, la medicina utiliza tres niveles progr
 - **MR4.5 (Respuesta Molecular Muy Profunda):** Nivel igual o menor al 0.0032%. La cantidad de células con el gen es tan microscópica que prácticamente roza el límite de detección de las máquinas.
 
 ### Pequeñas oscilaciones: ¿por qué no debes entrar en pánico?
+
 Una PCR no es una cifra estática grabada en piedra. Puede haber ligeras fluctuaciones técnicas de laboratorio entre un mes y otro sin que signifique una recaída. Tu hematólogo siempre observará la **tendencia general** en varios análisis sucesivos.
