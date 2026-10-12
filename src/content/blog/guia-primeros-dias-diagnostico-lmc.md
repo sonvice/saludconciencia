@@ -1,16 +1,20 @@
 ---
-title: "Acaban de diagnosticarme Leucemia Mieloide Crónica: Los 5 pasos esenciales para tus primeros días"
-description: "Sé exactamente cómo se siente recibir este diagnóstico. Respira hondo: hoy la ciencia nos ofrece un panorama lleno de vida y futuro."
+title: 'Acaban de diagnosticarme Leucemia Mieloide Crónica: Los 5 pasos esenciales para tus primeros días'
+description: 'Sé exactamente cómo se siente recibir este diagnóstico. Respira hondo: hoy la ciencia nos ofrece un panorama lleno de vida y futuro.'
 pubDate: 2026-08-15
-author: "Shirley Gaviria"
-authorRole: "Bacterióloga & Paciente de LMC (+22 años)"
-authorAvatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80"
-category: "Diagnóstico"
-image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80"
-imageAlt: "Consulta médica empática y comprensiva con profesional de la salud"
-tags: ["Diagnóstico", "Recién Diagnosticado", "Primeros Pasos", "Tranquilidad"]
+author: Shirley Gaviria
+authorRole: Bacterióloga & Paciente de LMC (+22 años)
+authorAvatar: /images/WhatsApp Image 2026-10-12 at 14.13.46.jpeg
+category: Diagnóstico
+image: https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80
+imageAlt: Consulta médica empática y comprensiva con profesional de la salud
+tags:
+  - Diagnóstico
+  - Recién Diagnosticado
+  - Primeros Pasos
+  - Tranquilidad
 featured: true
-readingTime: "6 min de lectura"
+readingTime: 6 min de lectura
 ---
 
 Si estás leyendo estas líneas recién salido del consultorio médico o con un informe de laboratorio en tus manos, quiero decirte lo primero y más importante: **respira hondo. No estás solo, y tu historia no termina aquí.**
