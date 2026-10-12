@@ -4,7 +4,7 @@ description: Aprende el lenguaje de tus análisis de laboratorio explicado por u
 pubDate: 2026-08-04
 author: Shirley Gaviria
 authorRole: Bacterióloga & Paciente de LMC (+22 años)
-authorAvatar: https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80
+authorAvatar: /images/WhatsApp Image 2026-10-12 at 14.13.46.jpeg
 category: Diagnóstico
 image: /images/pexels-ivan-s-9628831.jpg
 imageAlt: Tubo de ensayo y análisis de laboratorio con microscopio
