@@ -1,16 +1,21 @@
 ---
-title: "Guía práctica para sobrellevar la fatiga, calambres y náuseas con los ITK"
-description: "Estrategias del día a día probadas durante más de 20 años para minimizar el impacto de los medicamentos y mantener tu calidad de vida al máximo."
+title: Guía práctica para sobrellevar la fatiga, calambres y náuseas con los ITK
+description: Estrategias del día a día probadas durante más de 20 años para minimizar el impacto de los medicamentos y mantener tu calidad de vida al máximo.
 pubDate: 2026-07-28
-author: "Shirley Gaviria"
-authorRole: "Bacterióloga & Paciente de LMC (+22 años)"
-authorAvatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80"
-category: "Tratamientos e ITKs"
-image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80"
-imageAlt: "Persona relajándose y practicando bienestar y respiración al aire libre"
-tags: ["Efectos Secundarios", "Calambres", "Fatiga", "Calidad de Vida", "Bienestar"]
+author: Shirley Gaviria
+authorRole: Bacterióloga & Paciente de LMC (+22 años)
+authorAvatar: /images/WhatsApp Image 2026-10-12 at 14.13.46.jpeg
+category: Tratamientos e ITKs
+image: https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80
+imageAlt: Persona relajándose y practicando bienestar y respiración al aire libre
+tags:
+  - Efectos Secundarios
+  - Calambres
+  - Fatiga
+  - Calidad de Vida
+  - Bienestar
 featured: false
-readingTime: "5 min de lectura"
+readingTime: 5 min de lectura
 ---
 
 Tomar a diario un inhibidor de tirosina quinasa nos devuelve la vida, pero también nos exige aprender a convivir con efectos secundarios que pueden mellar nuestro bienestar si no sabemos cómo gestionarlos.
