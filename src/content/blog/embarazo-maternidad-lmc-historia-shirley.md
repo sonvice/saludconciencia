@@ -1,16 +1,21 @@
 ---
-title: "Maternidad y LMC: La decisión más compleja y el regalo de ver a mi hijo crecer sano"
-description: "Afrontar un embarazo con leucemia hace 20 años fue un desafío médico y humano monumental. Esta es mi historia y lo que la ciencia dice hoy sobre la fertilidad."
+title: 'Maternidad y LMC: La decisión más compleja y el regalo de ver a mi hijo crecer sano'
+description: Afrontar un embarazo con leucemia hace 20 años fue un desafío médico y humano monumental. Esta es mi historia y lo que la ciencia dice hoy sobre la fertilidad.
 pubDate: 2026-08-10
-author: "Shirley Gaviria"
-authorRole: "Bacterióloga & Paciente de LMC (+22 años)"
-authorAvatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80"
-category: "Embarazo y Fertilidad"
-image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80"
-imageAlt: "Madre y bebé en un momento de ternura y esperanza"
-tags: ["Embarazo", "Maternidad", "Fertilidad", "Historia Real", "ITK"]
+author: Shirley Gaviria
+authorRole: Bacterióloga & Paciente de LMC (+22 años)
+authorAvatar: /images/WhatsApp Image 2026-10-12 at 14.13.46.jpeg
+category: Embarazo y Fertilidad
+image: https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80
+imageAlt: Madre y bebé en un momento de ternura y esperanza
+tags:
+  - Embarazo
+  - Maternidad
+  - Fertilidad
+  - Historia Real
+  - ITK
 featured: true
-readingTime: "7 min de lectura"
+readingTime: 7 min de lectura
 ---
 
 Dos años después de mi diagnóstico, mi vida dio un vuelco inesperado: estaba embarazada. En aquel momento, la literatura médica sobre el uso de terapias dirigidas durante la gestación era casi nula, y el miedo llenaba cada rincón de las consultas.
