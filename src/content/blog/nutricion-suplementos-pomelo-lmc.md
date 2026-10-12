@@ -1,16 +1,22 @@
 ---
-title: "Nutrición y LMC: Por qué el pomelo (toronja) está prohibido y qué mitos debes desterrar"
-description: "Interacciones farmacológicas clave del citocromo P450 (CYP3A4), recomendaciones nutricionales y la verdad sobre dietas milagro y suplementos."
+title: 'Nutrición y LMC: Por qué el pomelo (toronja) está prohibido y qué mitos debes desterrar'
+description: Interacciones farmacológicas clave del citocromo P450 (CYP3A4), recomendaciones nutricionales y la verdad sobre dietas milagro y suplementos.
 pubDate: 2026-07-15
-author: "Shirley Gaviria"
-authorRole: "Bacterióloga & Paciente de LMC (+22 años)"
-authorAvatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80"
-category: "Nutrición y Mitos"
-image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80"
-imageAlt: "Plato de comida saludable con verduras frescas, frutas y semillas"
-tags: ["Nutrición", "Pomelo", "Interacciones", "CYP3A4", "Suplementos", "Mitos"]
+author: Shirley Gaviria
+authorRole: Bacterióloga & Paciente de LMC (+22 años)
+authorAvatar: /images/WhatsApp Image 2026-10-12 at 14.13.46.jpeg
+category: Nutrición y Mitos
+image: https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80
+imageAlt: Plato de comida saludable con verduras frescas, frutas y semillas
+tags:
+  - Nutrición
+  - Pomelo
+  - Interacciones
+  - CYP3A4
+  - Suplementos
+  - Mitos
 featured: false
-readingTime: "6 min de lectura"
+readingTime: 6 min de lectura
 ---
 
 Cuando recibimos el diagnóstico de cáncer, muchas personas de nuestro entorno se acercan con buenas intenciones recomendando jugos verdes mágicos, dietas restrictivas o suplementos supuestamente curativos.
